@@ -4,8 +4,10 @@
   import SiteHeader from '@components/ui/SiteHeader.svelte';
 </script>
 
-<main class="container mx-auto px-4">
+<div class="container mx-auto px-4">
   <SiteHeader />
-  <HeroSection />
-  <Placeholder />
-</main>
+  <main >
+    <HeroSection />
+    <Placeholder />
+  </main>
+</div>
