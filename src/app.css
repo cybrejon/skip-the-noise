@@ -248,6 +248,11 @@
   small {
     @apply text-sm leading-normal font-medium;
   }
+
+  button,
+  a {
+    @apply text-base font-medium;
+  }
 }
 
 @layer utilities {
