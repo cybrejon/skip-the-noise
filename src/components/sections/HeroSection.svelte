@@ -1,5 +1,5 @@
 <script>
-  import ScrollAnimation from "@components/ui/ScrollAnimation.svelte";
+  import HeroSplashAnimation from "@components/ui/HeroSplashAnimation.svelte";
 </script>
 <section class="pt-[113px] grid grid-cols-1 xl:grid-cols-2 items-center min-h-60 border">
 
@@ -12,6 +12,8 @@
     </p>
   </div>
 
-  <ScrollAnimation />
+  <div class="bg-gray-100 h-full">
+    <HeroSplashAnimation />
+  </div>
 
 </section>
