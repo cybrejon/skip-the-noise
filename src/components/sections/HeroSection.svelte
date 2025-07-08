@@ -1,4 +1,4 @@
-<section class="mt-[113px] grid grid-cols-1 xl:grid-cols-2 items-center min-h-60 border">
+<section class="pt-[113px] grid grid-cols-1 xl:grid-cols-2 items-center min-h-60 border">
 
   <div class="flex flex-col justify-center items-start py-12 border border-dashed">
     <h1 class="text-4xl md:text-5xl font-bold mb-4">
