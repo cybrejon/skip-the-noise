@@ -1,3 +1,6 @@
+<script>
+  import ScrollAnimation from "@components/ui/ScrollAnimation.svelte";
+</script>
 <section class="pt-[113px] grid grid-cols-1 xl:grid-cols-2 items-center min-h-60 border">
 
   <div class="flex flex-col justify-center items-start py-12 border border-dashed">
@@ -9,10 +12,6 @@
     </p>
   </div>
 
-  <div class="flex justify-center items-center">
-    <div class="w-full bg-gray-100 rounded-lg flex items-center justify-center">
-      <span class="text-gray-400">[Scroll Animation]</span>
-    </div>
-  </div>
+  <ScrollAnimation />
 
 </section>
