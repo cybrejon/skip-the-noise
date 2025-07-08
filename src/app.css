@@ -281,3 +281,7 @@
     @apply text-sm leading-normal font-medium;
   }
 }
+
+@utility solid-shadow {
+  filter: drop-shadow(0 6px 0 #1d1d1d);
+}
