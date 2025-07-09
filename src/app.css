@@ -213,6 +213,15 @@
   --color-neutral-foreground: #000000;
 }
 
+@layer components {
+  .brutal-button {
+    @apply drop-shadow-brutal active:drop-shadow-brutal-pressed border-2 border-neutral-700 font-bold text-primary-foreground hover:bg-neutral-500 hover:-translate-y-1 active:translate-y-1;
+  }
+  .brutal-button:hover {
+    transition: cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.2s;
+  }
+}
+
 @layer base {
   *,
   *::before,
@@ -296,12 +305,5 @@
   }
   .small {
     @apply text-sm leading-normal font-medium;
-  }
-  .brutal-button {
-    @apply drop-shadow-brutal active:drop-shadow-brutal-pressed border-2 border-neutral-700 font-bold text-primary-foreground hover:bg-neutral-500 hover:-translate-1;
-  }
-
-  .brutal-button:hover {
-    transition: cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.4s;
   }
 }
