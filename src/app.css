@@ -9,6 +9,7 @@
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   --font-inter: "Inter Variable", var(--font-system);
   --font-manrope: "Manrope Variable", var(--font-system);
+
   /* TYPOGRAPHY */
   --text-sm: clamp(0.8rem, 0.08vi + 0.78rem, 0.84rem);
   --text-base: clamp(1rem, 0.22vi + 0.95rem, 1.13rem);
@@ -18,14 +19,23 @@
   --text-xxl: clamp(2.44rem, 1.93vi + 2.01rem, 3.55rem);
   --text-xxxl: clamp(3.05rem, 2.93vi + 2.39rem, 4.73rem);
   --text-jumbo: clamp(3.81rem, 4.34vi + 2.84rem, 6.31rem);
+
   /* COLORS */
   --color-white: #ffffff;
   --color-black: #000000;
+
+  /* STYLES */
+  --drop-shadow-brutal: 0 6px var(--color-neutral-700);
+  --drop-shadow-brutal-pressed: 0 2px var(--color-neutral-700);
+  --text-shadow-brutal: 1px 2px var(--color-neutral-700); /* text keyline/hinting for foreground text on primary colors */
+
   /* Brand colors */
   --color-blue: oklch(0.4669 0.244 264.38); /* #0E3FDF */
   --color-rojo: oklch(0.5744 0.2285 24); /* #E00C2C */
   --color-cardinal: oklch(0.5417 0.2095 16.45); /* #CC1242 */
+
   /* PALETTES */
+
   /* Neutral */
   --color-neutral-50: color-mix(
     in oklab,
@@ -82,6 +92,7 @@
     var(--color-white),
     var(--color-black) 95%
   );
+
   /* Primary */
   --color-primary-50: color-mix(
     in oklab,
@@ -138,6 +149,7 @@
     var(--color-blue),
     var(--color-black) 90%
   );
+
   /* Secondary */
   --color-secondary-50: color-mix(
     in oklab,
@@ -194,6 +206,11 @@
     var(--color-rojo),
     var(--color-black) 90%
   );
+
+  /* CONTRAST FOREGROUNDS */
+  --color-primary-foreground: #ffffff;
+  --color-secondary-foreground: #ffffff;
+  --color-neutral-foreground: #000000;
 }
 
 @layer base {
@@ -208,7 +225,7 @@
   }
 
   body {
-    @apply antialiased bg-white text-neutral-800 font-inter scroll-smooth;
+    @apply antialiased bg-white text-neutral-700 font-inter scroll-smooth;
   }
 
   h1,
@@ -279,5 +296,12 @@
   }
   .small {
     @apply text-sm leading-normal font-medium;
+  }
+  .brutal-button {
+    @apply drop-shadow-brutal active:drop-shadow-brutal-pressed border-2 border-neutral-700 font-bold text-primary-foreground hover:bg-neutral-500 hover:-translate-1;
+  }
+
+  .brutal-button:hover {
+    transition: cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.4s;
   }
 }

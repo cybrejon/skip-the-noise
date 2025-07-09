@@ -25,7 +25,7 @@
 <div class="block h-50 relative">
   {#key switcherooText}
     <span
-      class="text-secondary-500 absolute"
+      class="text-secondary-500 absolute tracking-tighter"
       in:fly={{
         delay: 250,
         duration: 400,

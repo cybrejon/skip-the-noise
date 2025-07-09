@@ -32,11 +32,11 @@
     <!-- Splash -->
     <div id="splash" class="h-svh sticky top-0" aria-hidden="true">
       <div class="container mx-auto h-full grid grid-cols-1 xl:grid-cols-2">
-        <div class="flex justify-start items-center py-12 px-6">
+        <div class="flex justify-start items-center py-12 px-6 drop">
           <div
             class="text-xxxl lg:text-jumbo leading-none font-extrabold font-manrope"
           >
-            Skip the<br />
+            <span class="tracking-tighter">Skip the</span><br />
             <Switcheroo samples={switcherooSamples} />
           </div>
         </div>
@@ -58,7 +58,7 @@
       <div class="container mx-auto">
         <div class="flex flex-col justify-center items-center">
           <hgroup class="flex flex-col justify-center items-center px-6 py-12">
-            <h1 class="h2 text-center mb-[0.5em]">
+            <h1 class="h2 text-center mb-[0.5em] tracking-tight">
               A Performance Digital Media agency founded by former WPP Media
               leads
             </h1>
@@ -75,7 +75,7 @@
           >
             <a
               href="/#"
-              class="group text-white flex flex-row items-center justify-center gap-2 px-20 py-6 bg-primary-500 cursor-pointer"
+              class="group text-white flex brutal-button flex-row items-center justify-center gap-2 px-20 py-6 bg-secondary-500 rounded-sm cursor-pointer"
               aria-label="Discover you platform score"
             >
               <span aria-hidden="true">Discover your Platform Score</span>
