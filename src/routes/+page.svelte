@@ -1,6 +1,7 @@
 <script lang="ts">
   // import HeroSection from "@components/sections/HeroSection.svelte";
   import Placeholder from "@components/sections/Placeholder.svelte";
+  import Blur from "@components/ui/ornaments/Blur.svelte";
   import SiteHeader from "@components/ui/SiteHeader.svelte";
   import Switcheroo from "@components/ui/Switcheroo.svelte";
   import { ArrowRightIcon } from "lucide-svelte";
@@ -17,6 +18,7 @@
 <SiteHeader />
 
 <main class="isolate w-full overflow-x-clip">
+  <Blur />
   <!-- <HeroSection /> -->
   {@render HeroSection()}
   {@render ServicesSection()}
@@ -28,7 +30,7 @@
 </main>
 
 {#snippet HeroSection()}
-  <section id="hero" class="">
+  <section id="hero" class="bg-secondary-100">
     <!-- Splash -->
     <div id="splash" class="h-svh sticky top-0" aria-hidden="true">
       <div class="container mx-auto h-full grid grid-cols-1 xl:grid-cols-2">
@@ -55,9 +57,9 @@
       id="hero-content"
       class="pt-30 pb-12 min-h-[80vh] sticky top-0 px-3 bg-white border-t border-neutral-100 shadow-[0px_-96px_240px_60px] shadow-white"
     >
-      <div class="container mx-auto">
+      <div class="container mx-auto border-2 rounded-xl pt-28 pb-24 bg-secondary-50 drop-shadow-brutal">
         <div class="flex flex-col justify-center items-center">
-          <hgroup class="flex flex-col justify-center items-center px-6 py-12">
+          <hgroup class="flex flex-col justify-center items-center px-6 pb-16">
             <h1 class="h2 text-center mb-[0.5em] tracking-tight">
               A Performance Digital Media agency founded by former WPP Media
               leads
@@ -75,10 +77,10 @@
           >
             <a
               href="/#"
-              class="group text-white flex brutal-button flex-row items-center justify-center gap-2 px-20 py-6 bg-secondary-500 rounded-sm cursor-pointer"
+              class="group text-white flex brutal-button flex-row items-center justify-center gap-2 px-20 py-6 bg-secondary-500 rounded-full cursor-pointer"
               aria-label="Discover you platform score"
             >
-              <span aria-hidden="true">Discover your Platform Score</span>
+              <span aria-hidden="true" class="text-shadow-brutal">Discover your Platform Score</span>
               <ArrowRightIcon
                 class="group-hover:translate-x-2"
                 size={20}
