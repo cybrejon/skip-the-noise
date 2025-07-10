@@ -8,11 +8,11 @@
 
   const NavLinks = [
     {
-      label: "services",
+      label: "<span class=\"text-shadow-brutal\">🧠</span> services",
       url: "/#",
     },
     {
-      label: "about",
+      label: "<span class=\"text-shadow-brutal\">💡</span> about",
       url: "/#",
     },
   ];
@@ -47,10 +47,9 @@
       <ul class="flex flex-row items-center gap-3">
         {#each NavLinks as link}
           <li class="flex flex-row items-center gap-3">
-            <a href={link.url} class="nav-link font-semibold hover:opacity-50"
-              >{link.label}</a
+            <a href={link.url} class="nav-link font-semibold text-neutral-700 py-2 px-4 rounded-full brutal-button bg-secondary-100"
+              >{@html link.label}</a
             >
-            <span class="opacity-20 pointer-events-none select-none">/</span>
           </li>
         {/each}
         <li class="book-button-wrapper flex flex-row items-center gap-3 relative">
