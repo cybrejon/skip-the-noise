@@ -1,6 +1,7 @@
 <script lang="ts">
   // import HeroSection from "@components/sections/HeroSection.svelte";
   import Placeholder from "@components/sections/Placeholder.svelte";
+  import PlatformsMarquee from "@components/ui/PlatformsMarquee.svelte";
   import SiteHeader from "@components/ui/SiteHeader.svelte";
   import Switcheroo from "@components/ui/Switcheroo.svelte";
   import { ArrowRightIcon } from "lucide-svelte";
@@ -147,9 +148,9 @@
       <!-- Platforms marquee -->
       <article
         id="platforms-we-work-with"
-        class="h-60 border-t border-neutral-100 overflow-x-clip"
+        class="h-60 border-t border-neutral-100 overflow-clip"
       >
-        <div class="w-full h-full bg-neutral-50"></div>
+        <PlatformsMarquee />
       </article>
     </div>
   </section>
