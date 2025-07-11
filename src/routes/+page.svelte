@@ -1,10 +1,10 @@
 <script lang="ts">
-  // import HeroSection from "@components/sections/HeroSection.svelte";
   import Placeholder from "@components/sections/Placeholder.svelte";
   import PlatformsMarquee from "@components/ui/PlatformsMarquee.svelte";
   import SiteHeader from "@components/ui/SiteHeader.svelte";
   import Switcheroo from "@components/ui/Switcheroo.svelte";
   import { ArrowRightIcon } from "lucide-svelte";
+  import grid_background from '$lib/images/grid.svg';
 
   let switcherooSamples: string[] = $state([
     "unnecessary calls",
@@ -18,21 +18,18 @@
 <SiteHeader />
 
 <main class="isolate w-full overflow-x-clip">
-  <!-- <Blur /> -->
-  <!-- <HeroSection /> -->
   {@render HeroSection()}
   {@render ServicesSection()}
   <!-- {@render PlatformsSection()} -->
   {@render BrandsSection()}
   {@render TeamSection()}
   {@render BookendSection()}
-  <!-- <Placeholder /> -->
 </main>
 
 {#snippet HeroSection()}
   <section id="hero">
     <!-- Splash -->
-    <div id="splash" class="h-svh sticky top-0" aria-hidden="true">
+    <div id="splash" class="h-svh sticky top-0" aria-hidden="true" style={`background-image: url(${grid_background}); background-size: cover;`}>
       <div class="container mx-auto h-full grid grid-cols-1 xl:grid-cols-2">
         <div class="flex justify-start items-center py-12 px-6 drop">
           <div
@@ -55,7 +52,7 @@
     <!-- Actual content -->
     <div
       id="hero-content"
-      class="pt-30 pb-12 min-h-[80vh] sticky top-0 px-3 bg-light-grey border-t border-neutral-100 shadow-[0px_-96px_240px_60px] shadow-light-grey"
+      class="pt-30 pb-12 min-h-[80vh] sticky top-0 px-3 bg-light-grey border-t-2 border-deep-indigo border-dashed shadow-[0px_-96px_240px_60px] shadow-light-grey"
     >
       <div class="container mx-auto border-2 rounded-xl pt-28 pb-24 bg-secondary-50 drop-shadow-brutal">
         <div class="flex flex-col justify-center items-center">
@@ -112,7 +109,7 @@
 {/snippet}
 
 {#snippet ServicesSection()}
-  <section id="what-we-do" class="border-t border-neutral-100">
+  <section id="what-we-do" class="border-t border-deep-indigo">
     <!-- Intro -->
     <div id="services-intro" class="py-30 sticky top-0">
       <div class="container mx-auto">
@@ -121,7 +118,7 @@
     </div>
     <!-- Services -->
     <div
-      class="pt-20 bg-light-grey sticky top-0 border-t border-neutral-100 shadow-[0px_-48px_120px_0px] shadow-light-grey"
+      class="pt-20 bg-light-grey sticky top-0 border-t border-deep-indigo shadow-[0px_-48px_120px_0px] shadow-light-grey"
     >
       <div class="container mx-auto grid lg:grid-cols-3 gap-6 pb-20">
         <article class="card p-6">
@@ -149,7 +146,7 @@
       <!-- Platforms marquee -->
       <article
         id="platforms-we-work-with"
-        class="h-60 border-t border-neutral-100 overflow-clip"
+        class="h-60 border-t border-deep-indigo overflow-clip"
       >
         <PlatformsMarquee />
       </article>
@@ -158,7 +155,7 @@
 {/snippet}
 
 {#snippet BrandsSection()}
-  <section id="featured-brands" class="border-t border-neutral-100">
+  <section id="featured-brands" class="border-t border-deep-indigo">
     <!-- Intro -->
     <div id="brands-intro" class="py-30 sticky top-0">
       <div class="container mx-auto">
@@ -168,7 +165,7 @@
     <!-- Brands -->
     <div class="grid">
       <article
-        class="tile sticky top-30 border-t border-neutral-100 bg-light-grey shadow-[0px_-48px_120px_0px] shadow-light-grey"
+        class="tile sticky top-30 border-t border-deep-indigo bg-light-grey shadow-[0px_-48px_120px_0px] shadow-light-grey"
       >
         <div class="container mx-auto flex flex-col lg:flex-row">
           <hgroup class="px-6 py-15 lg:flex-1/2">
@@ -182,7 +179,7 @@
         </div>
       </article>
 
-      <article class="tile sticky top-30 border-t border-neutral-100 bg-light-grey">
+      <article class="tile sticky top-30 border-t border-deep-indigo bg-light-grey">
         <div class="container mx-auto flex flex-col lg:flex-row">
           <hgroup class="px-6 py-15 lg:flex-1/2">
             <h3 class="mb-[0.5em]">SaaS</h3>
@@ -195,7 +192,7 @@
         </div>
       </article>
 
-      <article class="tile sticky top-30 border-t border-neutral-100 bg-light-grey">
+      <article class="tile sticky top-30 border-t border-deep-indigo bg-light-grey">
         <div class="container mx-auto flex flex-col lg:flex-row">
           <hgroup class="px-6 py-15 lg:flex-1/2">
             <h3 class="mb-[0.5em]">Cybersecurity</h3>
@@ -212,7 +209,7 @@
 {/snippet}
 
 {#snippet TeamSection()}
-  <section id="team" class="border-t border-neutral-100">
+  <section id="team" class="border-t border-deep-indigo">
     <!-- Intro -->
     <div id="team-intro" class="py-30 sticky top-0">
       <hgroup class="container mx-auto">
@@ -233,7 +230,7 @@
       >
         <!-- <img src="" alt="Photo of Zoha" class="" /> -->
         <div
-          class="w-full aspect-square p-1 bg-light-grey border border-neutral-200 rounded-2xl overflow-hidden"
+          class="w-full aspect-square p-1 bg-light-grey border border-deep-indigo rounded-2xl overflow-hidden"
         >
           <div class="w-full h-full bg-neutral-50 rounded-xl"></div>
         </div>
@@ -245,7 +242,7 @@
       >
         <!-- <img src="" alt="Photo of Sonia" class="" /> -->
         <div
-          class="w-full aspect-square p-1 bg-light-grey border border-neutral-200 rounded-2xl overflow-hidden"
+          class="w-full aspect-square p-1 bg-light-grey border border-deep-indigo rounded-2xl overflow-hidden"
         >
           <div class="w-full h-full bg-neutral-50 rounded-xl"></div>
         </div>
@@ -254,7 +251,7 @@
     </div>
     <!-- Details -->
     <div
-      class="sticky top-0 border-t border-neutral-100 bg-light-grey shadow-[0px_-48px_120px_0px] shadow-light-grey"
+      class="sticky top-0 border-t border-deep-indigo bg-light-grey shadow-[0px_-48px_120px_0px] shadow-light-grey"
     >
       <div class="container mx-auto grid lg:grid-cols-2 gap-6 py-20">
         <article class="card p-6">
@@ -275,14 +272,14 @@
 {/snippet}
 
 {#snippet BookendSection()}
-  <section id="bookend" class=" pt-24 bg-light-grey border-t border-neutral-200">
+  <section id="bookend" class=" pt-24 bg-light-grey border-t border-deep-indigo">
     <div class="container mx-auto">
       <h6 class="text-jumbo text-center text-neutral-300 p-6">
         People work with people.<br />We make it feel like that again.
       </h6>
 
       <div
-        class="flex justify-center items-center p-6 border-t border-neutral-200"
+        class="flex justify-center items-center p-6 border-t border-deep-indigo"
       >
         <small class=""
           >Copyright 2025 <span>&centerdot;</span> Skip the Noise Media</small
