@@ -44,18 +44,18 @@
         </div>
 
         <div class="hidden xl:flex justify-center items-center">
-          <div
+          <!-- <div
             class="w-full bg-gray-100 rounded-lg flex items-center justify-center"
           >
             <span class="text-gray-400">[Scroll Animation]</span>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
     <!-- Actual content -->
     <div
       id="hero-content"
-      class="pt-30 pb-12 min-h-[80vh] sticky top-0 px-3 bg-white border-t border-neutral-100 shadow-[0px_-96px_240px_60px] shadow-white"
+      class="pt-30 pb-12 min-h-[80vh] sticky top-0 px-3 bg-light-grey border-t border-neutral-100 shadow-[0px_-96px_240px_60px] shadow-light-grey"
     >
       <div class="container mx-auto border-2 rounded-xl pt-28 pb-24 bg-secondary-50 drop-shadow-brutal">
         <div class="flex flex-col justify-center items-center">
@@ -121,7 +121,7 @@
     </div>
     <!-- Services -->
     <div
-      class="pt-20 bg-white sticky top-0 border-t border-neutral-100 shadow-[0px_-48px_120px_0px] shadow-white"
+      class="pt-20 bg-light-grey sticky top-0 border-t border-neutral-100 shadow-[0px_-48px_120px_0px] shadow-light-grey"
     >
       <div class="container mx-auto grid lg:grid-cols-3 gap-6 pb-20">
         <article class="card p-6">
@@ -168,7 +168,7 @@
     <!-- Brands -->
     <div class="grid">
       <article
-        class="tile sticky top-30 border-t border-neutral-100 bg-white shadow-[0px_-48px_120px_0px] shadow-white"
+        class="tile sticky top-30 border-t border-neutral-100 bg-light-grey shadow-[0px_-48px_120px_0px] shadow-light-grey"
       >
         <div class="container mx-auto flex flex-col lg:flex-row">
           <hgroup class="px-6 py-15 lg:flex-1/2">
@@ -182,7 +182,7 @@
         </div>
       </article>
 
-      <article class="tile sticky top-30 border-t border-neutral-100 bg-white">
+      <article class="tile sticky top-30 border-t border-neutral-100 bg-light-grey">
         <div class="container mx-auto flex flex-col lg:flex-row">
           <hgroup class="px-6 py-15 lg:flex-1/2">
             <h3 class="mb-[0.5em]">SaaS</h3>
@@ -195,7 +195,7 @@
         </div>
       </article>
 
-      <article class="tile sticky top-30 border-t border-neutral-100 bg-white">
+      <article class="tile sticky top-30 border-t border-neutral-100 bg-light-grey">
         <div class="container mx-auto flex flex-col lg:flex-row">
           <hgroup class="px-6 py-15 lg:flex-1/2">
             <h3 class="mb-[0.5em]">Cybersecurity</h3>
@@ -233,7 +233,7 @@
       >
         <!-- <img src="" alt="Photo of Zoha" class="" /> -->
         <div
-          class="w-full aspect-square p-1 bg-white border border-neutral-200 rounded-2xl overflow-hidden"
+          class="w-full aspect-square p-1 bg-light-grey border border-neutral-200 rounded-2xl overflow-hidden"
         >
           <div class="w-full h-full bg-neutral-50 rounded-xl"></div>
         </div>
@@ -245,7 +245,7 @@
       >
         <!-- <img src="" alt="Photo of Sonia" class="" /> -->
         <div
-          class="w-full aspect-square p-1 bg-white border border-neutral-200 rounded-2xl overflow-hidden"
+          class="w-full aspect-square p-1 bg-light-grey border border-neutral-200 rounded-2xl overflow-hidden"
         >
           <div class="w-full h-full bg-neutral-50 rounded-xl"></div>
         </div>
@@ -254,7 +254,7 @@
     </div>
     <!-- Details -->
     <div
-      class="sticky top-0 border-t border-neutral-100 bg-white shadow-[0px_-48px_120px_0px] shadow-white"
+      class="sticky top-0 border-t border-neutral-100 bg-light-grey shadow-[0px_-48px_120px_0px] shadow-light-grey"
     >
       <div class="container mx-auto grid lg:grid-cols-2 gap-6 py-20">
         <article class="card p-6">
@@ -275,7 +275,7 @@
 {/snippet}
 
 {#snippet BookendSection()}
-  <section id="bookend" class=" pt-24 bg-white border-t border-neutral-200">
+  <section id="bookend" class=" pt-24 bg-light-grey border-t border-neutral-200">
     <div class="container mx-auto">
       <h6 class="text-jumbo text-center text-neutral-300 p-6">
         People work with people.<br />We make it feel like that again.

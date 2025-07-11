@@ -31,7 +31,7 @@
 <header
   class="fixed inset-x-0 top-0 z-20 flex flex-col px-3 border-b-2 {isScrolled ||
   isMobileNavOpen
-    ? 'bg-white border-neutral-700'
+    ? 'bg-light-grey border-neutral-700'
     : 'bg-transparent border-transparent'}"
 >
   <div
@@ -47,7 +47,7 @@
       <ul class="flex flex-row items-center gap-3">
         {#each NavLinks as link}
           <li class="flex flex-row items-center gap-3">
-            <a href={link.url} class="nav-link font-semibold text-neutral-700 py-2 px-4 rounded-md brutal-button active:bg-secondary-200 bg-white"
+            <a href={link.url} class="nav-link font-semibold text-neutral-700 py-2 px-4 rounded-md brutal-button active:bg-secondary-200 bg-light-grey"
               >{link.label}</a
             >
           </li>
@@ -96,7 +96,7 @@
           
           <a
             href={link.url}
-            class="nav-link shadow-1 border-2 border-neutral-700 rounded-full font-bold gap-2 px-5 py-2 pr-12 items-center bg-white"
+            class="nav-link shadow-1 border-2 border-neutral-700 rounded-full font-bold gap-2 px-5 py-2 pr-12 items-center bg-light-grey"
           >
             {link.label}
           </a>
