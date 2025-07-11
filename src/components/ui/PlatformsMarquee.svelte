@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { capitalizeFirstLetter } from "$lib/scripts/utils";
+
   let marquee: HTMLDivElement;
   let isAnimated: boolean = $state(false);
   const platforms: string[] = [
@@ -58,7 +60,7 @@
     src="/platforms/{platform}.svg"
     alt="{platform} logo"
     class="size-20 lg:size-30 aspect-square opacity-50 hover:opacity-80"
-    title={platform}
+    title={capitalizeFirstLetter(platform)}
   />
 {/snippet}
 
