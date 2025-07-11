@@ -8,11 +8,11 @@
 
   const NavLinks = [
     {
-      label: "<span class=\"text-shadow-brutal\">🧠</span> services",
+      label: "🧠 services",
       url: "/#",
     },
     {
-      label: "<span class=\"text-shadow-brutal\">💡</span> about",
+      label: "💡 about",
       url: "/#",
     },
   ];
@@ -47,8 +47,8 @@
       <ul class="flex flex-row items-center gap-3">
         {#each NavLinks as link}
           <li class="flex flex-row items-center gap-3">
-            <a href={link.url} class="nav-link font-semibold text-neutral-700 py-2 px-4 rounded-full brutal-button bg-secondary-100"
-              >{@html link.label}</a
+            <a href={link.url} class="nav-link font-semibold text-shadow-brutal py-2 px-4 rounded-md brutal-button bg-secondary-500"
+              >{link.label}</a
             >
           </li>
         {/each}
@@ -56,7 +56,7 @@
           
           <a
             href="/#"
-            class="nav-link px-5 py-2 pr-12 rounded-full brutal-button bg-primary-500"
+            class="nav-link px-5 py-2 pr-12 rounded-md brutal-button bg-primary-500"
           >
             <span class="text-shadow-brutal">book a free strategy call</span>
             

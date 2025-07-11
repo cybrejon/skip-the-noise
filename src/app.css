@@ -26,6 +26,7 @@
 
   /* STYLES */
   --drop-shadow-brutal: 0 6px var(--color-neutral-700);
+  --drop-shadow-brutal-hovered: 0 10px var(--color-neutral-700);
   --drop-shadow-brutal-pressed: 0 2px var(--color-neutral-700);
   --text-shadow-brutal: 1px 2px var(--color-neutral-700); /* text keyline/hinting for foreground text on primary colors */
 
@@ -215,7 +216,7 @@
 
 @layer components {
   .brutal-button {
-    @apply drop-shadow-brutal active:drop-shadow-brutal-pressed border-2 border-neutral-700 font-bold text-primary-foreground hover:bg-neutral-500 hover:-translate-y-1 active:translate-y-1;
+    @apply drop-shadow-brutal active:drop-shadow-brutal-pressed hover:drop-shadow-brutal-hovered border-2 border-neutral-700 font-bold text-primary-foreground hover:bg-neutral-500 hover:-translate-y-1 active:translate-y-1;
   }
   .brutal-button:hover {
     transition: cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.2s;

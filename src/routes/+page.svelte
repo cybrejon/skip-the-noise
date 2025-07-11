@@ -1,7 +1,6 @@
 <script lang="ts">
   // import HeroSection from "@components/sections/HeroSection.svelte";
   import Placeholder from "@components/sections/Placeholder.svelte";
-  import Blur from "@components/ui/ornaments/Blur.svelte";
   import SiteHeader from "@components/ui/SiteHeader.svelte";
   import Switcheroo from "@components/ui/Switcheroo.svelte";
   import { ArrowRightIcon } from "lucide-svelte";
@@ -18,7 +17,7 @@
 <SiteHeader />
 
 <main class="isolate w-full overflow-x-clip">
-  <Blur />
+  <!-- <Blur /> -->
   <!-- <HeroSection /> -->
   {@render HeroSection()}
   {@render ServicesSection()}
@@ -30,7 +29,7 @@
 </main>
 
 {#snippet HeroSection()}
-  <section id="hero" class="bg-secondary-100">
+  <section id="hero">
     <!-- Splash -->
     <div id="splash" class="h-svh sticky top-0" aria-hidden="true">
       <div class="container mx-auto h-full grid grid-cols-1 xl:grid-cols-2">
