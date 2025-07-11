@@ -56,8 +56,9 @@
 {#snippet PlatformLogo(platform: string)}
   <img
     src="/platforms/{platform}.svg"
-    alt={platform}
-    class="size-30 aspect-square"
+    alt="{platform} logo"
+    class="size-20 lg:size-30 aspect-square opacity-50 hover:opacity-80"
+    title={platform}
   />
 {/snippet}
 
