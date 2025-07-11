@@ -47,7 +47,7 @@
       <ul class="flex flex-row items-center gap-3">
         {#each NavLinks as link}
           <li class="flex flex-row items-center gap-3">
-            <a href={link.url} class="nav-link font-semibold text-shadow-brutal py-2 px-4 rounded-md brutal-button bg-secondary-500"
+            <a href={link.url} class="nav-link font-semibold text-neutral-700 py-2 px-4 rounded-md brutal-button active:bg-secondary-200 bg-white"
               >{link.label}</a
             >
           </li>
@@ -56,7 +56,7 @@
           
           <a
             href="/#"
-            class="nav-link px-5 py-2 pr-12 rounded-md brutal-button bg-primary-500"
+            class="nav-link px-5 py-2 pr-12 rounded-md brutal-button bg-primary-500 hover:bg-primary-400 active:bg-secondary-200"
           >
             <span class="text-shadow-brutal">book a free strategy call</span>
             
