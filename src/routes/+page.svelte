@@ -4,7 +4,7 @@
   import SiteHeader from "@components/ui/SiteHeader.svelte";
   import Switcheroo from "@components/ui/Switcheroo.svelte";
   import { ArrowRightIcon } from "lucide-svelte";
-  import grid_background from '$lib/images/grid.svg';
+  import grid_background from "$lib/images/grid.svg";
 
   let switcherooSamples: string[] = $state([
     "unnecessary calls",
@@ -29,7 +29,12 @@
 {#snippet HeroSection()}
   <section id="hero">
     <!-- Splash -->
-    <div id="splash" class="h-svh sticky top-0" aria-hidden="true" style={`background-image: url(${grid_background}); background-size: cover;`}>
+    <div
+      id="splash"
+      class="h-svh sticky top-0"
+      aria-hidden="true"
+      style={`background-image: url(${grid_background}); background-size: cover;`}
+    >
       <div class="container mx-auto h-full grid grid-cols-1 xl:grid-cols-2">
         <div class="flex justify-start items-center py-12 px-6 drop">
           <div
@@ -52,16 +57,18 @@
     <!-- Actual content -->
     <div
       id="hero-content"
-      class="pt-30 pb-12 min-h-[80vh] sticky top-0 px-3 bg-light-grey border-t-2 border-deep-indigo border-dashed shadow-[0px_-96px_240px_60px] shadow-light-grey"
+      class="py-20 min-h-[80vh] sticky top-0 px-3 bg-light-grey border-t-2 border-deep-indigo border-dashed shadow-[0px_-96px_240px_60px] shadow-light-grey"
     >
-      <div class="container mx-auto border-2 rounded-xl pt-28 pb-24 bg-secondary-50 drop-shadow-brutal">
+      <div
+        class="container mx-auto px-3 py-12 md:py-24 border-2 border-deep-indigo rounded-xl bg-secondary-50 drop-shadow-brutal"
+      >
         <div class="flex flex-col justify-center items-center">
           <hgroup class="flex flex-col justify-center items-center px-6 pb-16">
             <h1 class="h2 text-center mb-[0.5em] tracking-tight">
               A Performance Digital Media agency founded by former WPP Media
               leads
             </h1>
-            <p class="h5">
+            <p class="h5 text-center text-pretty">
               We're cutting through the noise to deliver what matters: <span
                 class="font-semibold text-primary-500">results</span
               >
@@ -74,10 +81,12 @@
           >
             <a
               href="/#"
-              class="group text-white flex brutal-button flex-row items-center justify-center gap-2 px-20 py-6 bg-secondary-500 rounded-full cursor-pointer"
+              class="group text-white w-full sm:w-fit flex brutal-button flex-row items-center justify-center gap-2 p-4 sm:px-20 sm:py-6 bg-secondary-500 rounded-lg cursor-pointer"
               aria-label="Discover you platform score"
             >
-              <span aria-hidden="true" class="text-shadow-brutal">Discover your Platform Score</span>
+              <span aria-hidden="true" class="text-shadow-brutal"
+                >Discover your Platform Score</span
+              >
               <ArrowRightIcon
                 class="group-hover:translate-x-2"
                 size={20}
@@ -89,14 +98,14 @@
               <p>
                 <a
                   href="/#"
-                  class="link underline decoration-2 hover:text-primary-500"
+                  class="link underline decoration-2 text-center hover:text-primary-500"
                   >Claim your 2-week free trial</a
                 >
               </p>
               <p>
                 Wanna talk painpoints? <a
                   href="/#"
-                  class="link underline decoration-2 hover:text-primary-500"
+                  class="link underline decoration-2 hover:text-primary-500 block sm:inline"
                   >Book a call</a
                 >
               </p>
@@ -109,7 +118,7 @@
 {/snippet}
 
 {#snippet ServicesSection()}
-  <section id="what-we-do" class="border-t border-deep-indigo">
+  <section id="what-we-do" class="border-t-2 border-deep-indigo border-dashed">
     <!-- Intro -->
     <div id="services-intro" class="py-30 sticky top-0">
       <div class="container mx-auto">
@@ -118,24 +127,26 @@
     </div>
     <!-- Services -->
     <div
-      class="pt-20 bg-light-grey sticky top-0 border-t border-deep-indigo shadow-[0px_-48px_120px_0px] shadow-light-grey"
+      class="pt-20 bg-light-grey sticky top-0 shadow-[0px_-48px_120px_0px] shadow-light-grey"
     >
-      <div class="container mx-auto grid lg:grid-cols-3 gap-6 pb-20">
-        <article class="card p-6">
+      <div
+        class="container mx-auto grid lg:grid-cols-3 gap-6 pb-20 px-3 lg:px-0"
+      >
+        <article class="card">
           <h3 class="mb-3">Consultation</h3>
           <p>
             Get expert, on-demand advice and tailored strategies. Book as needed
             or choose ongoing support.
           </p>
         </article>
-        <article class="card p-6">
+        <article class="card lg:-translate-y-12">
           <h3 class="mb-3">Performance Marketing</h3>
           <p>
             Expand your reach beyond traditional platforms while maximizing end
             results.
           </p>
         </article>
-        <article class="card p-6">
+        <article class="card">
           <h3 class="mb-3">Auditing</h3>
           <p>
             Receive a clear, actionable analysis and checklist to boost ROAS and
@@ -144,10 +155,10 @@
         </article>
       </div>
       <!-- Platforms marquee -->
-      <article
-        id="platforms-we-work-with"
-        class="h-60 border-t border-deep-indigo overflow-clip"
-      >
+      <article id="platforms-we-work-with" class="flex flex-col">
+        <h4 class="h6 text-center opacity-50 select-none">
+          Platforms we work with
+        </h4>
         <PlatformsMarquee />
       </article>
     </div>
@@ -155,7 +166,10 @@
 {/snippet}
 
 {#snippet BrandsSection()}
-  <section id="featured-brands" class="border-t border-deep-indigo">
+  <section
+    id="featured-brands"
+    class="border-t-2 border-deep-indigo border-dashed"
+  >
     <!-- Intro -->
     <div id="brands-intro" class="py-30 sticky top-0">
       <div class="container mx-auto">
@@ -163,45 +177,57 @@
       </div>
     </div>
     <!-- Brands -->
-    <div class="grid">
+    <div class="grid gap-12 pb-30 bg-light-grey">
       <article
-        class="tile sticky top-30 border-t border-deep-indigo bg-light-grey shadow-[0px_-48px_120px_0px] shadow-light-grey"
+        class="tile h-[60svh] sticky top-30 shadow-[0px_-48px_120px_0px] shadow-light-grey"
       >
-        <div class="container mx-auto flex flex-col lg:flex-row">
-          <hgroup class="px-6 py-15 lg:flex-1/2">
+        <div class="container mx-auto h-full flex flex-col lg:flex-row">
+          <hgroup class="px-6 py-15 lg:flex-1/2 bg-light-grey">
             <h3 class="mb-[0.5em]">E-commerce</h3>
             <p>
               Turn browsers into buyers. We help brands grow sales by showing up
               at the right moment — with the right creative.
             </p>
           </hgroup>
-          <div class="bg-neutral-50 h-60 lg:h-90 lg:flex-1/2"></div>
+          <div class="h-full lg:flex-1/2 px-3 lg:px-0">
+            <div
+              class="w-full h-full border-2 rounded-xl bg-primary-100 drop-shadow-brutal"
+            ></div>
+          </div>
         </div>
       </article>
 
-      <article class="tile sticky top-30 border-t border-deep-indigo bg-light-grey">
-        <div class="container mx-auto flex flex-col lg:flex-row">
-          <hgroup class="px-6 py-15 lg:flex-1/2">
+      <article class="tile h-[60svh] sticky top-30">
+        <div class="container mx-auto h-full flex flex-col lg:flex-row">
+          <hgroup class="px-6 py-15 lg:flex-1/2 bg-light-grey">
             <h3 class="mb-[0.5em]">SaaS</h3>
             <p>
               Fill your funnel with qualified leads. From demos to downloads, we
               build paid social systems that drive pipeline.
             </p>
           </hgroup>
-          <div class="bg-neutral-50 h-60 lg:h-90 lg:flex-1/2"></div>
+          <div class="h-full lg:flex-1/2 px-3 lg:px-0">
+            <div
+              class="w-full h-full border-2 rounded-xl bg-primary-100 drop-shadow-brutal"
+            ></div>
+          </div>
         </div>
       </article>
 
-      <article class="tile sticky top-30 border-t border-deep-indigo bg-light-grey">
-        <div class="container mx-auto flex flex-col lg:flex-row">
-          <hgroup class="px-6 py-15 lg:flex-1/2">
+      <article class="tile h-[60svh] sticky top-30">
+        <div class="container mx-auto h-full flex flex-col lg:flex-row">
+          <hgroup class="px-6 py-15 lg:flex-1/2 bg-light-grey">
             <h3 class="mb-[0.5em]">Cybersecurity</h3>
             <p>
               Reach decision-makers before your competitors do. We target CISOs,
               CTOs, and IT buyers where they already spend time.
             </p>
           </hgroup>
-          <div class="bg-neutral-50 h-60 lg:h-90 lg:flex-1/2"></div>
+          <div class="h-full lg:flex-1/2 px-3 lg:px-0">
+            <div
+              class="w-full h-full border-2 rounded-xl bg-primary-100 drop-shadow-brutal"
+            ></div>
+          </div>
         </div>
       </article>
     </div>
@@ -209,7 +235,7 @@
 {/snippet}
 
 {#snippet TeamSection()}
-  <section id="team" class="border-t border-deep-indigo">
+  <section id="team" class="border-t-2 border-deep-indigo border-dashed">
     <!-- Intro -->
     <div id="team-intro" class="py-30 sticky top-0">
       <hgroup class="container mx-auto">
@@ -222,45 +248,45 @@
     </div>
     <!-- Headshots -->
     <div
-      class="container mx-auto min-h-90 flex justify-center items-center py-20 sticky top-0 isolate"
+      class="container mx-auto min-h-90 flex justify-center items-center pt-0 pb-20 sticky top-20 isolate"
     >
       <!-- Zoha -->
       <figure
-        class="w-40 md:w-60 absolute -translate-x-[20vw] rotate-15 hover:z-10"
+        class="w-40 md:w-60 lg:w-80 absolute -translate-x-[20vw] rotate-15 hover:z-10"
       >
         <!-- <img src="" alt="Photo of Zoha" class="" /> -->
         <div
-          class="w-full aspect-square p-1 bg-light-grey border border-deep-indigo rounded-2xl overflow-hidden"
+          class="w-full aspect-square p-1 bg-light-grey border-2 border-deep-indigo rounded-2xl overflow-hidden"
         >
           <div class="w-full h-full bg-neutral-50 rounded-xl"></div>
         </div>
-        <figcaption class="ps-3 opacity-50">Zoha</figcaption>
+        <figcaption class="ps-3 opacity-50 text-start">Zoha</figcaption>
       </figure>
       <!-- Sonia -->
       <figure
-        class="w-40 md:w-60 absolute translate-x-[20vw] -rotate-15 hover:z-10"
+        class="w-40 md:w-60 lg:w-80 absolute translate-x-[20vw] -rotate-15 hover:z-10"
       >
         <!-- <img src="" alt="Photo of Sonia" class="" /> -->
         <div
-          class="w-full aspect-square p-1 bg-light-grey border border-deep-indigo rounded-2xl overflow-hidden"
+          class="w-full aspect-square p-1 bg-light-grey border-2 border-deep-indigo rounded-2xl overflow-hidden"
         >
           <div class="w-full h-full bg-neutral-50 rounded-xl"></div>
         </div>
-        <figcaption class="ps-3 opacity-50">Sonia</figcaption>
+        <figcaption class="pe-3 opacity-50 text-end">Sonia</figcaption>
       </figure>
     </div>
     <!-- Details -->
     <div
-      class="sticky top-0 border-t border-deep-indigo bg-light-grey shadow-[0px_-48px_120px_0px] shadow-light-grey"
+      class="sticky top-0 px-3 bg-light-grey shadow-[0px_-48px_120px_0px] shadow-light-grey"
     >
       <div class="container mx-auto grid lg:grid-cols-2 gap-6 py-20">
-        <article class="card p-6">
+        <article class="card">
           <h3 class="mb-3">Zoha</h3>
           <p>Ex-WPP Director | Performance nerd</p>
           <p>Obsessed with ROAS + Reddit</p>
           <p>Loves cats and Apex Legends</p>
         </article>
-        <article class="card p-6">
+        <article class="card">
           <h3 class="mb-3">Sonia</h3>
           <p>Ex-WPP | Rogers &rarr; Coca-Cola</p>
           <p>Gemini, natural talker, always real</p>
@@ -272,7 +298,10 @@
 {/snippet}
 
 {#snippet BookendSection()}
-  <section id="bookend" class=" pt-24 bg-light-grey border-t border-deep-indigo">
+  <section
+    id="bookend"
+    class=" pt-24 bg-light-grey border-t-2 border-deep-indigo border-dashed"
+  >
     <div class="container mx-auto">
       <h6 class="text-jumbo text-center text-neutral-300 p-6">
         People work with people.<br />We make it feel like that again.
