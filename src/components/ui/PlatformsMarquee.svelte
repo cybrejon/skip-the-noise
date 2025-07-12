@@ -39,9 +39,7 @@
   data-is-animated={isAnimated}
   bind:this={marquee}
 >
-  <ul
-    class="scroller h-full flex justify-center items-center gap-15 px-0 py-12"
-  >
+  <ul class="scroller">
     {#each platforms as platform}
       <li class="">
         {@render PlatformLogo(platform)}
@@ -68,7 +66,7 @@
   @reference "../../app.css";
 
   .marquee {
-    @apply w-full h-full select-none;
+    @apply w-full h-60 overflow-clip select-none;
     &[data-is-animated="true"] {
       mask: linear-gradient(
         90deg,
@@ -79,7 +77,7 @@
       );
 
       & > .scroller {
-        @apply will-change-transform w-max;
+        @apply will-change-transform w-max h-full flex justify-center items-center gap-15 px-0 py-12;
 
         animation: playMarquee 30s linear infinite forwards;
         animation-play-state: running;
