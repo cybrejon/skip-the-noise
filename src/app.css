@@ -25,8 +25,8 @@
   --color-black: #000000;
 
   /* STYLES */
-  --drop-shadow-brutal: 0 6px var(--color-deep-indigo);
-  --drop-shadow-brutal-hovered: 0 10px var(--color-deep-indigo);
+  --drop-shadow-brutal: 0 4px var(--color-deep-indigo);
+  --drop-shadow-brutal-hovered: 0 8px var(--color-deep-indigo);
   --drop-shadow-brutal-pressed: 0 2px var(--color-deep-indigo);
   --text-shadow-brutal: 1px 2px var(--color-deep-indigo); /* text keyline/hinting for foreground text on primary colors */
 
