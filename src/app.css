@@ -227,6 +227,14 @@
   .brutal-button:hover {
     transition: cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.2s;
   }
+  /* Nav Link */
+  .nav-link {
+    @apply font-manrope font-bold text-primary-900 inline-flex px-2 py-1 hover:text-primary-500;
+  }
+  /* Card */
+  .card {
+    @apply border-2 rounded-xl p-12 bg-primary-100 drop-shadow-brutal;
+  }
 }
 
 @layer base {
