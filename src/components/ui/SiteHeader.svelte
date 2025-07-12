@@ -55,7 +55,7 @@
         >
           <a
             href="/#"
-            class="brutal-button px-5 py-2 pr-12 rounded-md bg-primary-500 hover:bg-primary-400 active:bg-secondary-200"
+            class="brutal-button px-5 py-2 pr-12 rounded-md bg-primary-500 hover:bg-primary-400 active:bg-primary-600"
           >
             <span class="text-shadow-brutal">Book a free strategy call</span>
           </a>
