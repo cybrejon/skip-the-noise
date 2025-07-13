@@ -36,6 +36,13 @@
   --color-cardinal: oklch(0.6535 0.234792 34.037); /* #CC1242 */
   --color-yellow: oklch(0.7521 0.1786 58.75); /* #FF8D00 */
 
+  /* GRADIENTS */
+  --gradient-yellow-red: linear-gradient(
+    90deg,
+    var(--color-yellow) 0%,
+    var(--color-cardinal) 100%
+  );
+
   /* PALETTES */
 
   /* Deep Indigo */

@@ -5,6 +5,8 @@
   import { ArrowRightIcon } from "lucide-svelte";
   import grid_background from "$lib/images/grid.svg";
   import Icon from "@iconify/svelte";
+  import OrnamentCursor from '$lib/images/cursor.svg.svelte';
+  import Gradientify from "@components/ui/Gradientify.svelte";
 
   let switcherooSamples: string[] = $state([
     "unnecessary calls",
@@ -72,7 +74,7 @@
         <div class="flex px-3 py-12 md:py-24 flex-col justify-center items-center">
           <hgroup class="flex flex-col justify-center items-center px-6 pb-16">
             <h1 class="h2 text-center mb-[0.5em] tracking-tight">
-              A <em class="text-nowrap">Perform<span class="drop-shadow-brutal"><Icon icon='noto:trophy' style="display: inline-block; transform: skewX(-10deg); margin-right: -5px; margin-left: 5px; vertical-align: top;" /></span>nce</em> Digital Media agency founded by former WPP Media
+              A <em class="text-nowrap"><Gradientify>Perform<Icon icon='noto:trophy' style="display: inline-block; transform: skewX(-10deg); margin-right: -5px; margin-left: 5px; vertical-align: top;" />nce</Gradientify></em> Digital Media agency founded by former WPP Media
               leads
             </h1>
             <p class="h5 text-center text-pretty">
@@ -88,7 +90,7 @@
           >
             <a
               href="/#"
-              class="group text-white w-full sm:w-fit brutal-button bg-secondary-500 p-2 rounded-2xl cursor-pointer"
+              class="group text-white relative w-full sm:w-fit brutal-button bg-secondary-500 p-2 rounded-2xl cursor-pointer"
               aria-label="Discover you platform score"
             >
             <div class="flex flex-row items-center justify-center gap-2 p-4 sm:px-20 sm:py-6 border-2 rounded-lg border-secondary-100 border-dashed">
@@ -101,7 +103,7 @@
                 aria-hidden
               />
             </div>
-              
+              <OrnamentCursor class='absolute -bottom-6 -right-6 w-12 h-12 text-white' />
             </a>
 
             <div class="flex flex-col justify-center items-center gap-3 p-6">
