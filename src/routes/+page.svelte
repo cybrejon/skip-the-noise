@@ -1,10 +1,10 @@
 <script lang="ts">
-  import Placeholder from "@components/sections/Placeholder.svelte";
   import PlatformsMarquee from "@components/ui/PlatformsMarquee.svelte";
   import SiteHeader from "@components/ui/SiteHeader.svelte";
   import Switcheroo from "@components/ui/Switcheroo.svelte";
   import { ArrowRightIcon } from "lucide-svelte";
   import grid_background from "$lib/images/grid.svg";
+  import Icon from "@iconify/svelte";
 
   let switcherooSamples: string[] = $state([
     "unnecessary calls",
@@ -57,15 +57,22 @@
     <!-- Actual content -->
     <div
       id="hero-content"
-      class="py-20 min-h-[80vh] sticky top-0 px-3 bg-light-grey border-t-2 border-deep-indigo border-dashed shadow-[0px_-96px_240px_60px] shadow-light-grey"
+      class="py-20 min-h-[80vh] sticky top-0 bg-light-grey border-t-2 border-deep-indigo border-dashed shadow-[0px_-96px_240px_60px] shadow-light-grey"
     >
       <div
-        class="container mx-auto px-3 py-12 md:py-24 border-2 border-deep-indigo rounded-xl bg-secondary-50 drop-shadow-brutal"
+        class="container mx-auto border-2 border-deep-indigo rounded-xl bg-secondary-50 drop-shadow-brutal"
       >
-        <div class="flex flex-col justify-center items-center">
+      <div class="p-2 md:p-4 flex border-b-2">
+        <div class="flex gap-2 md:gap-3 items-center justify-center">
+          <span class="h-4 w-4 md:h-6 md:w-6 bg-deep-indigo rounded-full"></span>
+          <span class="h-4 w-4 md:h-6 md:w-6 bg-deep-indigo rounded-full"></span>
+          <span class="h-4 w-4 md:h-6 md:w-6 bg-deep-indigo rounded-full"></span>
+        </div>
+      </div>
+        <div class="flex px-3 py-12 md:py-24 flex-col justify-center items-center">
           <hgroup class="flex flex-col justify-center items-center px-6 pb-16">
             <h1 class="h2 text-center mb-[0.5em] tracking-tight">
-              A Performance Digital Media agency founded by former WPP Media
+              A <em class="text-nowrap">Perform<span class="drop-shadow-brutal"><Icon icon='noto:trophy' style="display: inline-block; transform: skewX(-10deg); margin-right: -5px; margin-left: 5px; vertical-align: top;" /></span>nce</em> Digital Media agency founded by former WPP Media
               leads
             </h1>
             <p class="h5 text-center text-pretty">
@@ -81,9 +88,10 @@
           >
             <a
               href="/#"
-              class="group text-white w-full sm:w-fit flex brutal-button flex-row items-center justify-center gap-2 p-4 sm:px-20 sm:py-6 bg-secondary-500 rounded-lg cursor-pointer"
+              class="group text-white w-full sm:w-fit brutal-button bg-secondary-500 p-2 rounded-2xl cursor-pointer"
               aria-label="Discover you platform score"
             >
+            <div class="flex flex-row items-center justify-center gap-2 p-4 sm:px-20 sm:py-6 border-2 rounded-lg border-secondary-100 border-dashed">
               <span aria-hidden="true" class="text-shadow-brutal"
                 >Discover your Platform Score</span
               >
@@ -92,6 +100,8 @@
                 size={20}
                 aria-hidden
               />
+            </div>
+              
             </a>
 
             <div class="flex flex-col justify-center items-center gap-3 p-6">
