@@ -5,8 +5,9 @@
   import { ArrowRightIcon } from "lucide-svelte";
   import grid_background from "$lib/images/grid.svg";
   import Icon from "@iconify/svelte";
-  import OrnamentCursor from '$lib/images/cursor.svg.svelte';
+  import OrnamentCursor from "$lib/images/cursor.svg.svelte";
   import Gradientify from "@components/ui/Gradientify.svelte";
+  import { useIntersectionObserver } from "$lib/scripts/hooks.svelte";
 
   let switcherooSamples: string[] = $state([
     "unnecessary calls",
@@ -15,6 +16,7 @@
     "empty promises",
     "wasted time",
   ]);
+  let observer = useIntersectionObserver({ threshold: 0.5 });
 </script>
 
 <SiteHeader />
@@ -22,7 +24,6 @@
 <main class="isolate w-full overflow-x-clip">
   {@render HeroSection()}
   {@render ServicesSection()}
-  <!-- {@render PlatformsSection()} -->
   {@render BrandsSection()}
   {@render TeamSection()}
   {@render BookendSection()}
@@ -64,18 +65,29 @@
       <div
         class="container mx-auto border-2 border-deep-indigo rounded-xl bg-secondary-50 drop-shadow-brutal"
       >
-      <div class="p-2 md:p-4 flex border-b-2">
-        <div class="flex gap-2 md:gap-3 items-center justify-center">
-          <span class="h-4 w-4 md:h-6 md:w-6 bg-deep-indigo rounded-full"></span>
-          <span class="h-4 w-4 md:h-6 md:w-6 bg-deep-indigo rounded-full"></span>
-          <span class="h-4 w-4 md:h-6 md:w-6 bg-deep-indigo rounded-full"></span>
+        <div class="p-2 md:p-4 flex border-b-2">
+          <div class="flex gap-2 md:gap-3 items-center justify-center">
+            <span class="h-4 w-4 md:h-6 md:w-6 bg-deep-indigo rounded-full"
+            ></span>
+            <span class="h-4 w-4 md:h-6 md:w-6 bg-deep-indigo rounded-full"
+            ></span>
+            <span class="h-4 w-4 md:h-6 md:w-6 bg-deep-indigo rounded-full"
+            ></span>
+          </div>
         </div>
-      </div>
-        <div class="flex px-3 py-12 md:py-24 flex-col justify-center items-center">
+        <div
+          class="flex px-3 py-12 md:py-24 flex-col justify-center items-center"
+        >
           <hgroup class="flex flex-col justify-center items-center px-6 pb-16">
             <h1 class="h2 text-center mb-[0.5em] tracking-tight">
-              A <em class="text-nowrap"><Gradientify>Perform<Icon icon='noto:trophy' style="display: inline-block; transform: skewX(-10deg); margin-right: -5px; margin-left: 5px; vertical-align: top;" />nce</Gradientify></em> Digital Media agency founded by former WPP Media
-              leads
+              A <em class="text-nowrap"
+                ><Gradientify
+                  >Perform<Icon
+                    icon="noto:trophy"
+                    style="display: inline-block; transform: skewX(-10deg); margin-right: -5px; margin-left: 5px; vertical-align: top;"
+                  />nce</Gradientify
+                ></em
+              > Digital Media agency founded by former WPP Media leads
             </h1>
             <p class="h5 text-center text-pretty">
               We're cutting through the noise to deliver what matters: <span
@@ -93,17 +105,21 @@
               class="group text-white relative w-full sm:w-fit brutal-button bg-secondary-500 p-2 rounded-2xl cursor-pointer"
               aria-label="Discover you platform score"
             >
-            <div class="flex flex-row items-center justify-center gap-2 p-4 sm:px-20 sm:py-6 border-2 rounded-lg border-secondary-100 border-dashed">
-              <span aria-hidden="true" class="text-shadow-brutal"
-                >Discover your Platform Score</span
+              <div
+                class="flex flex-row items-center justify-center gap-2 p-4 sm:px-20 sm:py-6 border-2 rounded-lg border-secondary-100 border-dashed"
               >
-              <ArrowRightIcon
-                class="group-hover:translate-x-2"
-                size={20}
-                aria-hidden
+                <span aria-hidden="true" class="text-shadow-brutal"
+                  >Discover your Platform Score</span
+                >
+                <ArrowRightIcon
+                  class="group-hover:translate-x-2"
+                  size={20}
+                  aria-hidden
+                />
+              </div>
+              <OrnamentCursor
+                class="absolute -bottom-6 -right-6 w-12 h-12 text-white"
               />
-            </div>
-              <OrnamentCursor class='absolute -bottom-6 -right-6 w-12 h-12 text-white' />
             </a>
 
             <div class="flex flex-col justify-center items-center gap-3 p-6">
@@ -142,7 +158,9 @@
       class="pt-20 bg-light-grey sticky top-0 shadow-[0px_-48px_120px_0px] shadow-light-grey"
     >
       <div
-        class="container mx-auto grid lg:grid-cols-3 gap-6 pb-20 px-3 lg:px-0"
+        class="service-cards container mx-auto grid lg:grid-cols-3 gap-6 pb-20 px-3 lg:px-0 isolate"
+        class:observed={observer.intersecting}
+        bind:this={observer.ref}
       >
         <article class="card">
           <h3 class="mb-3">Consultation</h3>
@@ -151,7 +169,7 @@
             or choose ongoing support.
           </p>
         </article>
-        <article class="card lg:-translate-y-12">
+        <article class="card z-10">
           <h3 class="mb-3">Performance Marketing</h3>
           <p>
             Expand your reach beyond traditional platforms while maximizing end
@@ -329,3 +347,37 @@
     </div>
   </section>
 {/snippet}
+
+<style>
+  @media (width >= 64rem /* 1024px */) {
+    div.service-cards {
+      & > article {
+        opacity: 0;
+      }
+      & > article:first-child {
+        transform: translate(3.75rem, 3.75rem) /* 60px 60px */;
+      }
+      & > article:nth-child(2) {
+        transform: translateY(0) /* 48px */;
+      }
+      & > article:last-child {
+        transform: translate(-3.75rem, 3.75rem) /* -60px 60px */;
+      }
+
+      &.observed {
+        & > article {
+          opacity: 1;
+        }
+        & > article:first-child {
+          transform: translate(0, 0);
+        }
+        & > article:nth-child(2) {
+          transform: translateY(-3rem) /* -48px */;
+        }
+        & > article:last-child {
+          transform: translate(0, 0);
+        }
+      }
+    }
+  }
+</style>
