@@ -62,7 +62,8 @@
       class="py-20 min-h-[80vh] sticky top-0 bg-light-grey border-t-2 border-deep-indigo border-dashed shadow-[0px_-96px_240px_60px] shadow-light-grey"
     >
       <div
-        class="container mx-auto border-2 border-deep-indigo rounded-xl bg-secondary-50 drop-shadow-brutal"
+        class="container mx-auto border-2 border-deep-indigo rounded-xl bg-secondary-50 drop-shadow-brutal bg-bottom bg-cover"
+        style="background-image: url('/src/lib/images/bg_performance.svg');"
       >
       <div class="p-2 md:p-4 flex border-b-2">
         <div class="flex gap-2 md:gap-3 items-center justify-center">
