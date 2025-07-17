@@ -74,7 +74,7 @@
         <div class="flex px-3 py-12 md:py-24 flex-col justify-center items-center">
           <hgroup class="flex flex-col justify-center items-center px-6 pb-16">
             <h1 class="h2 text-center mb-[0.5em] tracking-tight">
-              A <span class="text-nowrap"><Gradientify>Perform<Icon icon='noto:trophy' style="display: inline-block; margin-right: -5px; margin-left: 5px; vertical-align: top;" />nce</Gradientify></span> Digital Media agency founded by former WPP Media
+              A <span class="text-nowrap"><Gradientify>Perform<Icon icon='noto:trophy' style="display: inline-block; vertical-align: top;" />nce</Gradientify></span> Digital Media agency founded by former WPP Media
               leads
             </h1>
             <p class="h5 text-center text-pretty">
