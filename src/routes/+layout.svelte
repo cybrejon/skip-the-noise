@@ -7,8 +7,6 @@
     children: import("svelte").Snippet;
   }
 
-  export const ssr = false;
-
   let { children }: Props = $props();
 </script>
 
