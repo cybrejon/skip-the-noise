@@ -59,7 +59,7 @@
     <!-- Actual content -->
     <div
       id="hero-content"
-      class="py-20 min-h-[80vh] sticky top-0 bg-light-grey border-t-2 border-deep-indigo border-dashed shadow-[0px_-96px_240px_60px] shadow-light-grey"
+      class="py-20 min-h-[80vh] sticky top-0 bg-white border-t-2 border-deep-indigo border-dashed shadow-[0px_-96px_240px_60px] shadow-white"
     >
       <div
         class="container mx-auto border-2 border-deep-indigo rounded-xl bg-secondary-50 drop-shadow-brutal bg-bottom bg-cover"
@@ -140,7 +140,7 @@
     </div>
     <!-- Services -->
     <div
-      class="pt-20 bg-light-grey sticky top-0 shadow-[0px_-48px_120px_0px] shadow-light-grey"
+      class="pt-20 bg-white sticky top-0 shadow-[0px_-48px_120px_0px] shadow-white"
     >
       <div
         class="container mx-auto grid lg:grid-cols-3 gap-6 pb-20 px-3 lg:px-0"
@@ -190,12 +190,12 @@
       </div>
     </div>
     <!-- Brands -->
-    <div class="grid gap-12 pb-30 bg-light-grey">
+    <div class="grid gap-12 pb-30 bg-white">
       <article
-        class="tile h-[60svh] sticky top-30 shadow-[0px_-48px_120px_0px] shadow-light-grey"
+        class="tile h-[60svh] sticky top-30 shadow-[0px_-48px_120px_0px] shadow-white"
       >
         <div class="container mx-auto h-full flex flex-col lg:flex-row">
-          <hgroup class="px-6 py-15 lg:flex-1/2 bg-light-grey">
+          <hgroup class="px-6 py-15 lg:flex-1/2 bg-white">
             <h3 class="mb-[0.5em]">E-commerce</h3>
             <p>
               Turn browsers into buyers. We help brands grow sales by showing up
@@ -212,7 +212,7 @@
 
       <article class="tile h-[60svh] sticky top-30">
         <div class="container mx-auto h-full flex flex-col lg:flex-row">
-          <hgroup class="px-6 py-15 lg:flex-1/2 bg-light-grey">
+          <hgroup class="px-6 py-15 lg:flex-1/2 bg-white">
             <h3 class="mb-[0.5em]">SaaS</h3>
             <p>
               Fill your funnel with qualified leads. From demos to downloads, we
@@ -229,7 +229,7 @@
 
       <article class="tile h-[60svh] sticky top-30">
         <div class="container mx-auto h-full flex flex-col lg:flex-row">
-          <hgroup class="px-6 py-15 lg:flex-1/2 bg-light-grey">
+          <hgroup class="px-6 py-15 lg:flex-1/2 bg-white">
             <h3 class="mb-[0.5em]">Cybersecurity</h3>
             <p>
               Reach decision-makers before your competitors do. We target CISOs,
@@ -269,7 +269,7 @@
       >
         <!-- <img src="" alt="Photo of Zoha" class="" /> -->
         <div
-          class="w-full aspect-square p-1 bg-light-grey border-2 border-deep-indigo rounded-2xl overflow-hidden"
+          class="w-full aspect-square p-1 bg-white border-2 border-deep-indigo rounded-2xl overflow-hidden"
         >
           <div class="w-full h-full bg-neutral-50 rounded-xl"></div>
         </div>
@@ -281,7 +281,7 @@
       >
         <!-- <img src="" alt="Photo of Sonia" class="" /> -->
         <div
-          class="w-full aspect-square p-1 bg-light-grey border-2 border-deep-indigo rounded-2xl overflow-hidden"
+          class="w-full aspect-square p-1 bg-white border-2 border-deep-indigo rounded-2xl overflow-hidden"
         >
           <div class="w-full h-full bg-neutral-50 rounded-xl"></div>
         </div>
@@ -290,7 +290,7 @@
     </div>
     <!-- Details -->
     <div
-      class="sticky top-0 px-3 bg-light-grey shadow-[0px_-48px_120px_0px] shadow-light-grey"
+      class="sticky top-0 px-3 bg-white shadow-[0px_-48px_120px_0px] shadow-white"
     >
       <div class="container mx-auto grid lg:grid-cols-2 gap-6 py-20">
         <article class="card">
@@ -313,7 +313,7 @@
 {#snippet BookendSection()}
   <section
     id="bookend"
-    class=" pt-24 bg-light-grey border-t-2 border-deep-indigo border-dashed"
+    class=" pt-24 bg-white border-t-2 border-deep-indigo border-dashed"
   >
     <div class="container mx-auto">
       <h6 class="text-jumbo text-center text-neutral-300 p-6">

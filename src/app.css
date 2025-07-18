@@ -257,7 +257,7 @@
   }
 
   body {
-    @apply antialiased bg-light-grey text-deep-indigo font-inter scroll-smooth;
+    @apply antialiased bg-white text-deep-indigo font-inter scroll-smooth;
   }
 
   h1,
