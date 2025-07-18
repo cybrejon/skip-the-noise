@@ -8,6 +8,7 @@
   import OrnamentCursor from "$lib/images/cursor.svg.svelte";
   import Gradientify from "@components/ui/Gradientify.svelte";
   import { useIntersectionObserver } from "$lib/scripts/hooks.svelte";
+  import { onMount } from "svelte";
 
   let switcherooSamples: string[] = $state([
     "unnecessary calls",
@@ -16,7 +17,12 @@
     "empty promises",
     "wasted time",
   ]);
-  let observer = useIntersectionObserver({ threshold: 0.5 });
+  let serviceCardsObserver = useIntersectionObserver({ threshold: 0.5 });
+  let teamHeadshotsObserver = useIntersectionObserver({ threshold: 0.5 });
+
+  onMount(() => {
+    serviceCardsObserver.once = true;
+  });
 </script>
 
 <SiteHeader />
@@ -159,8 +165,8 @@
     >
       <div
         class="service-cards container mx-auto grid lg:grid-cols-3 gap-6 pb-20 px-3 lg:px-0 isolate"
-        class:observed={observer.intersecting}
-        bind:this={observer.ref}
+        class:observed={serviceCardsObserver.intersecting}
+        bind:this={serviceCardsObserver.ref}
       >
         <article class="card">
           <h3 class="mb-3">Consultation</h3>
@@ -278,29 +284,29 @@
     </div>
     <!-- Headshots -->
     <div
-      class="container mx-auto min-h-90 flex justify-center items-center pt-0 pb-20 sticky top-20 isolate"
+      class="headshots container mx-auto min-h-90 flex justify-center items-center pt-0 pb-20 sticky top-20 isolate"
+      class:observed={teamHeadshotsObserver.intersecting}
+      bind:this={teamHeadshotsObserver.ref}
     >
       <!-- Zoha -->
-      <figure
-        class="w-40 md:w-60 lg:w-80 absolute -translate-x-[20vw] rotate-15 hover:z-10"
-      >
-        <!-- <img src="" alt="Photo of Zoha" class="" /> -->
+      <figure class="w-40 md:w-60 lg:w-80 absolute hover:z-10">
         <div
           class="w-full aspect-square p-1 bg-light-grey border-2 border-deep-indigo rounded-2xl overflow-hidden"
         >
-          <div class="w-full h-full bg-neutral-50 rounded-xl"></div>
+          <div class="w-full h-full bg-neutral-50 rounded-xl">
+            <!-- <img src="" alt="Photo of Zoha" class="" /> -->
+          </div>
         </div>
         <figcaption class="ps-3 opacity-50 text-start">Zoha</figcaption>
       </figure>
       <!-- Sonia -->
-      <figure
-        class="w-40 md:w-60 lg:w-80 absolute translate-x-[20vw] -rotate-15 hover:z-10"
-      >
-        <!-- <img src="" alt="Photo of Sonia" class="" /> -->
+      <figure class="w-40 md:w-60 lg:w-80 absolute hover:z-10">
         <div
           class="w-full aspect-square p-1 bg-light-grey border-2 border-deep-indigo rounded-2xl overflow-hidden"
         >
-          <div class="w-full h-full bg-neutral-50 rounded-xl"></div>
+          <div class="w-full h-full bg-neutral-50 rounded-xl">
+            <!-- <img src="" alt="Photo of Sonia" class="" /> -->
+          </div>
         </div>
         <figcaption class="pe-3 opacity-50 text-end">Sonia</figcaption>
       </figure>
@@ -353,6 +359,7 @@
     div.service-cards {
       & > article {
         opacity: 0;
+        /* transition: transform 1s cubic-bezier(0.16, 0.9, 0.38, 0.99); */
       }
       & > article:first-child {
         transform: translate(3.75rem, 3.75rem) /* 60px 60px */;
@@ -367,6 +374,7 @@
       &.observed {
         & > article {
           opacity: 1;
+          transition: transform 1s cubic-bezier(0.16, 0.9, 0.38, 0.99);
         }
         & > article:first-child {
           transform: translate(0, 0);
@@ -377,6 +385,39 @@
         & > article:last-child {
           transform: translate(0, 0);
         }
+      }
+    }
+  }
+
+  div.headshots {
+    & > figure {
+      opacity: 0;
+      user-select: none;
+    }
+    & > figure:first-child {
+      rotate: 30deg;
+      translate: -10vw 3.75rem /* 60px */;
+    }
+    & > figure:last-child {
+      rotate: -30deg;
+      translate: 10vw 3.75rem /* 60px */;
+    }
+
+    &.observed {
+      & > figure {
+        opacity: 1;
+        transition-duration: 1s;
+        transition-timing-function: cubic-bezier(0.16, 0.9, 0.38, 0.99);
+      }
+      & > figure:first-child {
+        rotate: 15deg;
+        translate: -20vw 0;
+        transition-delay: 100ms;
+      }
+      & > figure:last-child {
+        rotate: -15deg;
+        translate: 20vw 0;
+        transition-delay: 300ms;
       }
     }
   }
