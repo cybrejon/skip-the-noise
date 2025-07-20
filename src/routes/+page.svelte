@@ -5,8 +5,10 @@
   import { ArrowRightIcon } from "lucide-svelte";
   import grid_background from "$lib/images/grid.svg";
   import Icon from "@iconify/svelte";
-  import OrnamentCursor from '$lib/images/cursor.svg.svelte';
+  import OrnamentCursor from "$lib/images/cursor.svg.svelte";
   import Gradientify from "@components/ui/Gradientify.svelte";
+  import { useIntersectionObserver } from "$lib/scripts/hooks.svelte";
+  import { onMount } from "svelte";
 
   let switcherooSamples: string[] = $state([
     "unnecessary calls",
@@ -15,6 +17,12 @@
     "empty promises",
     "wasted time",
   ]);
+  let serviceCardsObserver = useIntersectionObserver({ threshold: 0.5 });
+  let teamHeadshotsObserver = useIntersectionObserver({ threshold: 0.5 });
+
+  onMount(() => {
+    serviceCardsObserver.once = true;
+  });
 </script>
 
 <SiteHeader />
@@ -22,7 +30,6 @@
 <main class="isolate w-full overflow-x-clip">
   {@render HeroSection()}
   {@render ServicesSection()}
-  <!-- {@render PlatformsSection()} -->
   {@render BrandsSection()}
   {@render TeamSection()}
   {@render BookendSection()}
@@ -65,17 +72,22 @@
         class="container mx-auto border-2 border-deep-indigo rounded-xl bg-secondary-50 drop-shadow-brutal bg-bottom bg-cover"
         style="background-image: url('/src/lib/images/bg_performance.svg');"
       >
-      <div class="p-2 md:p-4 flex border-b-2">
-        <div class="flex gap-2 md:gap-3 items-center justify-center">
-          <span class="h-4 w-4 md:h-6 md:w-6 bg-deep-indigo rounded-full"></span>
-          <span class="h-4 w-4 md:h-6 md:w-6 bg-deep-indigo rounded-full"></span>
-          <span class="h-4 w-4 md:h-6 md:w-6 bg-deep-indigo rounded-full"></span>
+        <div class="p-2 md:p-4 flex border-b-2">
+          <div class="flex gap-2 md:gap-3 items-center justify-center">
+            <span class="h-4 w-4 md:h-6 md:w-6 bg-deep-indigo rounded-full"
+            ></span>
+            <span class="h-4 w-4 md:h-6 md:w-6 bg-deep-indigo rounded-full"
+            ></span>
+            <span class="h-4 w-4 md:h-6 md:w-6 bg-deep-indigo rounded-full"
+            ></span>
+          </div>
         </div>
-      </div>
-        <div class="flex px-3 py-12 md:py-24 flex-col justify-center items-center">
+        <div
+          class="flex px-3 py-12 md:py-24 flex-col justify-center items-center"
+        >
           <hgroup class="flex flex-col justify-center items-center px-6 pb-16">
             <h1 class="h2 text-center mb-[0.5em] tracking-tight">
-              A <span class="text-nowrap"><Gradientify>Perform<Icon icon='noto:trophy' style="display: inline-block; vertical-align: top;" />nce</Gradientify></span> Digital Media agency founded by former WPP Media
+              A <em class="text-nowrap"><Gradientify>Perform<Icon icon='noto:trophy' style="display: inline-block; transform: skewX(-10deg); margin-right: -5px; margin-left: 5px; vertical-align: top;" />nce</Gradientify></em> Digital Media agency founded by former WPP Media
               leads
             </h1>
             <p class="h5 text-center text-pretty">
@@ -94,17 +106,21 @@
               class="group text-white relative w-full sm:w-fit brutal-button bg-secondary-500 p-2 rounded-2xl cursor-pointer"
               aria-label="Discover you platform score"
             >
-            <div class="flex flex-row items-center justify-center gap-2 p-4 sm:px-20 sm:py-6 border-2 rounded-lg border-secondary-100 border-dashed">
-              <span aria-hidden="true" class="text-shadow-brutal"
-                >Discover your Platform Score</span
+              <div
+                class="flex flex-row items-center justify-center gap-2 p-4 sm:px-20 sm:py-6 border-2 rounded-lg border-secondary-100 border-dashed"
               >
-              <ArrowRightIcon
-                class="group-hover:translate-x-2"
-                size={20}
-                aria-hidden
+                <span aria-hidden="true" class="text-shadow-brutal"
+                  >Discover your Platform Score</span
+                >
+                <ArrowRightIcon
+                  class="group-hover:translate-x-2"
+                  size={20}
+                  aria-hidden
+                />
+              </div>
+              <OrnamentCursor
+                class="absolute -bottom-6 -right-6 w-12 h-12 text-white"
               />
-            </div>
-              <OrnamentCursor class='absolute -bottom-6 -right-6 w-12 h-12 text-white' />
             </a>
 
             <div class="flex flex-col justify-center items-center gap-3 p-6">
@@ -143,7 +159,9 @@
       class="pt-20 bg-white sticky top-0 shadow-[0px_-48px_120px_0px] shadow-white"
     >
       <div
-        class="container mx-auto grid lg:grid-cols-3 gap-6 pb-20 px-3 lg:px-0"
+        class="service-cards container mx-auto grid lg:grid-cols-3 gap-6 pb-20 px-3 lg:px-0 isolate"
+        class:observed={serviceCardsObserver.intersecting}
+        bind:this={serviceCardsObserver.ref}
       >
         <article class="card">
           <h3 class="mb-3">Consultation</h3>
@@ -152,7 +170,7 @@
             or choose ongoing support.
           </p>
         </article>
-        <article class="card lg:-translate-y-12">
+        <article class="card z-10">
           <h3 class="mb-3">Performance Marketing</h3>
           <p>
             Expand your reach beyond traditional platforms while maximizing end
@@ -261,29 +279,29 @@
     </div>
     <!-- Headshots -->
     <div
-      class="container mx-auto min-h-90 flex justify-center items-center pt-0 pb-20 sticky top-20 isolate"
+      class="headshots container mx-auto min-h-90 flex justify-center items-center pt-0 pb-20 sticky top-20 isolate"
+      class:observed={teamHeadshotsObserver.intersecting}
+      bind:this={teamHeadshotsObserver.ref}
     >
       <!-- Zoha -->
-      <figure
-        class="w-40 md:w-60 lg:w-80 absolute -translate-x-[20vw] rotate-15 hover:z-10"
-      >
-        <!-- <img src="" alt="Photo of Zoha" class="" /> -->
+      <figure class="w-40 md:w-60 lg:w-80 absolute hover:z-10">
         <div
           class="w-full aspect-square p-1 bg-white border-2 border-deep-indigo rounded-2xl overflow-hidden"
         >
-          <div class="w-full h-full bg-neutral-50 rounded-xl"></div>
+          <div class="w-full h-full bg-neutral-50 rounded-xl">
+            <!-- <img src="" alt="Photo of Zoha" class="" /> -->
+          </div>
         </div>
         <figcaption class="ps-3 opacity-50 text-start">Zoha</figcaption>
       </figure>
       <!-- Sonia -->
-      <figure
-        class="w-40 md:w-60 lg:w-80 absolute translate-x-[20vw] -rotate-15 hover:z-10"
-      >
-        <!-- <img src="" alt="Photo of Sonia" class="" /> -->
+      <figure class="w-40 md:w-60 lg:w-80 absolute hover:z-10">
         <div
           class="w-full aspect-square p-1 bg-white border-2 border-deep-indigo rounded-2xl overflow-hidden"
         >
-          <div class="w-full h-full bg-neutral-50 rounded-xl"></div>
+          <div class="w-full h-full bg-neutral-50 rounded-xl">
+            <!-- <img src="" alt="Photo of Sonia" class="" /> -->
+          </div>
         </div>
         <figcaption class="pe-3 opacity-50 text-end">Sonia</figcaption>
       </figure>
@@ -330,3 +348,72 @@
     </div>
   </section>
 {/snippet}
+
+<style>
+  @media (width >= 64rem /* 1024px */) {
+    div.service-cards {
+      & > article {
+        opacity: 0;
+        /* transition: transform 1s cubic-bezier(0.16, 0.9, 0.38, 0.99); */
+      }
+      & > article:first-child {
+        transform: translate(3.75rem, 3.75rem) /* 60px 60px */;
+      }
+      & > article:nth-child(2) {
+        transform: translateY(0) /* 48px */;
+      }
+      & > article:last-child {
+        transform: translate(-3.75rem, 3.75rem) /* -60px 60px */;
+      }
+
+      &.observed {
+        & > article {
+          opacity: 1;
+          transition: transform 1s cubic-bezier(0.16, 0.9, 0.38, 0.99);
+        }
+        & > article:first-child {
+          transform: translate(0, 0);
+        }
+        & > article:nth-child(2) {
+          transform: translateY(-3rem) /* -48px */;
+        }
+        & > article:last-child {
+          transform: translate(0, 0);
+        }
+      }
+    }
+  }
+
+  div.headshots {
+    & > figure {
+      opacity: 0;
+      user-select: none;
+    }
+    & > figure:first-child {
+      rotate: 30deg;
+      translate: -10vw 3.75rem /* 60px */;
+    }
+    & > figure:last-child {
+      rotate: -30deg;
+      translate: 10vw 3.75rem /* 60px */;
+    }
+
+    &.observed {
+      & > figure {
+        opacity: 1;
+        transition-duration: 1s;
+        transition-timing-function: cubic-bezier(0.16, 0.9, 0.38, 0.99);
+      }
+      & > figure:first-child {
+        rotate: 15deg;
+        translate: -20vw 0;
+        transition-delay: 100ms;
+      }
+      & > figure:last-child {
+        rotate: -15deg;
+        translate: 20vw 0;
+        transition-delay: 300ms;
+      }
+    }
+  }
+</style>
