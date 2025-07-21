@@ -9,6 +9,7 @@
   import Gradientify from "@components/ui/Gradientify.svelte";
   import { useIntersectionObserver } from "$lib/scripts/hooks.svelte";
   import { onMount } from "svelte";
+  import { reveal } from 'svelte-reveal';
 
   let switcherooSamples: string[] = $state([
     "unnecessary calls",
@@ -73,10 +74,11 @@
       class={`py-20 min-h-[80vh] sticky top-0 border-t-2 border-deep-indigo border-dashed shadow-[0px_-96px_240px_60px] shadow-white ${heroSectionObserver.intersecting ? 'bg-primary-400' : 'bg-white'}`}
     >
       <div
+      use:reveal
         class="container mx-auto border-2 border-deep-indigo rounded-xl bg-primary-500 drop-shadow-brutal-card bg-bottom bg-cover overflow-hidden"
         style="background-image: url('/src/lib/images/bg_performance.svg');"
       >
-        <div class="p-2 md:p-4 flex border-b-2 bg-deep-indigo">
+        <div class="p-2 md:p-4 flex border-b-2 bg-deep-indigo" use:reveal={{ y: -20 }}>
           <div class="flex gap-2 md:gap-3 items-center justify-center">
             {#each Array.from({ length: 3 }) as item}
               <span class="h-4 w-4 md:h-6 md:w-6 bg-secondary-500 border-2 border-primary-foreground rounded-full"
@@ -95,15 +97,15 @@
               leads
             </h1>
             <p class="h5 text-center text-pretty">
-              We're cutting through the noise to deliver what matters: <span
-                class="font-semibold text-primary-foreground">RESULTS 💪</span
+              We're cutting through the noise to deliver what matters... <span
+                class="font-semibold text-orange-500">💪 RESULTS!</span
               >
             </p>
           </hgroup>
 
           <div
             id="ctas"
-            class="w-full flex justify-center items-center gap-3"
+            class="w-full flex justify-center items-center gap-3 flex-wrap"
           >
             <a
               href="/#"
