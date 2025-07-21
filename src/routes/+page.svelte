@@ -74,12 +74,10 @@
       >
         <div class="p-2 md:p-4 flex border-b-2">
           <div class="flex gap-2 md:gap-3 items-center justify-center">
-            <span class="h-4 w-4 md:h-6 md:w-6 bg-deep-indigo rounded-full"
+            {#each Array.from({ length: 3 }) as item}
+              <span class="h-4 w-4 md:h-6 md:w-6 bg-deep-indigo rounded-full"
             ></span>
-            <span class="h-4 w-4 md:h-6 md:w-6 bg-deep-indigo rounded-full"
-            ></span>
-            <span class="h-4 w-4 md:h-6 md:w-6 bg-deep-indigo rounded-full"
-            ></span>
+            {/each}
           </div>
         </div>
         <div
