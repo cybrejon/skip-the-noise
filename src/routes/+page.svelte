@@ -109,8 +109,9 @@
           >
             <a
               href="/#"
-              class="group text-white relative w-full sm:w-fit brutal-button bg-secondary-500 p-2 rounded-2xl cursor-pointer"
+              class="group text-white inline-block relative w-full sm:w-fit brutal-button bg-secondary-500 p-2 rounded-2xl cursor-pointer"
               aria-label="Discover you platform score"
+              use:reveal={{ x: 200 }}
             >
               <div
                 class="flex flex-row items-center justify-center gap-2 p-4 sm:px-20 sm:py-6 border-2 rounded-lg border-secondary-100 border-dashed"
@@ -130,8 +131,9 @@
             </a>
             <a
               href="/#"
-              class="group text-white relative w-full sm:w-fit brutal-button bg-primary-500 p-2 rounded-2xl cursor-pointer"
+              class="group inline-block text-white relative w-full sm:w-fit brutal-button bg-primary-500 p-2 rounded-2xl cursor-pointer"
               aria-label="Discover you platform score"
+              use:reveal={{ x: 200, delay: 200 }}
             >
               <div
                 class="flex flex-row items-center justify-center gap-2 p-4 sm:px-10 sm:py-6 rounded-lg"
@@ -143,8 +145,9 @@
             </a>
             <a
               href="/#"
-              class="group text-white relative w-full sm:w-fit brutal-button bg-primary-500 p-2 rounded-2xl cursor-pointer"
+              class="group inline-block text-white relative w-full sm:w-fit brutal-button bg-primary-500 p-2 rounded-2xl cursor-pointer"
               aria-label="Discover you platform score"
+              use:reveal={{ x: 200, delay: 400 }}
             >
               <div
                 class="flex flex-row items-center justify-center gap-2 p-4 sm:px-10 sm:py-6 rounded-lg"
