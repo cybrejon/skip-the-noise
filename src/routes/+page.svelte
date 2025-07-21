@@ -20,6 +20,8 @@
   let serviceCardsObserver = useIntersectionObserver({ threshold: 0.5 });
   let teamHeadshotsObserver = useIntersectionObserver({ threshold: 0.5 });
 
+  let heroSectionObserver = useIntersectionObserver({ threshold: 0.5 });
+
   onMount(() => {
     serviceCardsObserver.once = true;
   });
@@ -65,17 +67,19 @@
     </div>
     <!-- Actual content -->
     <div
+      bind:this={heroSectionObserver.ref}
       id="hero-content"
-      class="py-20 min-h-[80vh] sticky top-0 bg-white border-t-2 border-deep-indigo border-dashed shadow-[0px_-96px_240px_60px] shadow-white"
+      style={`background-image: url(${grid_background}); background-size: cover; background-attachment: fixed;`}
+      class={`py-20 min-h-[80vh] sticky top-0 border-t-2 border-deep-indigo border-dashed shadow-[0px_-96px_240px_60px] shadow-white ${heroSectionObserver.intersecting ? 'bg-primary-400' : 'bg-white'}`}
     >
       <div
-        class="container mx-auto border-2 border-deep-indigo rounded-xl bg-secondary-50 drop-shadow-brutal bg-bottom bg-cover"
+        class="container mx-auto border-2 border-deep-indigo rounded-xl bg-primary-500 drop-shadow-brutal-card bg-bottom bg-cover overflow-hidden"
         style="background-image: url('/src/lib/images/bg_performance.svg');"
       >
-        <div class="p-2 md:p-4 flex border-b-2">
+        <div class="p-2 md:p-4 flex border-b-2 bg-deep-indigo">
           <div class="flex gap-2 md:gap-3 items-center justify-center">
             {#each Array.from({ length: 3 }) as item}
-              <span class="h-4 w-4 md:h-6 md:w-6 bg-deep-indigo rounded-full"
+              <span class="h-4 w-4 md:h-6 md:w-6 bg-secondary-500 border-2 border-primary-foreground rounded-full"
             ></span>
             {/each}
           </div>
@@ -83,8 +87,8 @@
         <div
           class="flex px-3 py-12 md:py-24 flex-col justify-center items-center"
         >
-          <hgroup class="flex flex-col justify-center items-center px-6 pb-16">
-            <h1 class="h2 text-center mb-[0.5em] tracking-tight">
+          <hgroup class="flex flex-col justify-center items-center px-6 pb-16 text-primary-foreground">
+            <h1 class="text-center mb-[0.5em] tracking-tight">
               A <span class="text-nowrap">
                 <Gradientify>Perform<Icon icon='noto:trophy' style="display: inline-block; vertical-align: top;" />nce</Gradientify>
               </span> Digital Media agency founded by former WPP Media
@@ -92,14 +96,14 @@
             </h1>
             <p class="h5 text-center text-pretty">
               We're cutting through the noise to deliver what matters: <span
-                class="font-semibold text-primary-500">results</span
+                class="font-semibold text-primary-foreground">RESULTS 💪</span
               >
             </p>
           </hgroup>
 
           <div
             id="ctas"
-            class="w-full flex flex-col justify-center items-center"
+            class="w-full flex justify-center items-center gap-3"
           >
             <a
               href="/#"
@@ -122,23 +126,32 @@
                 class="absolute -bottom-6 -right-6 w-12 h-12 text-white"
               />
             </a>
-
-            <div class="flex flex-col justify-center items-center gap-3 p-6">
-              <p>
-                <a
-                  href="/#"
-                  class="link underline decoration-2 text-center hover:text-primary-500"
-                  >Claim your 2-week free trial</a
+            <a
+              href="/#"
+              class="group text-white relative w-full sm:w-fit brutal-button bg-primary-500 p-2 rounded-2xl cursor-pointer"
+              aria-label="Discover you platform score"
+            >
+              <div
+                class="flex flex-row items-center justify-center gap-2 p-4 sm:px-10 sm:py-6 rounded-lg"
+              >
+                <span aria-hidden="true" class="text-shadow-brutal"
+                  >Claim your 2-week free trial</span
                 >
-              </p>
-              <p>
-                Wanna talk painpoints? <a
-                  href="/#"
-                  class="link underline decoration-2 hover:text-primary-500 block sm:inline"
-                  >Book a call</a
+              </div>
+            </a>
+            <a
+              href="/#"
+              class="group text-white relative w-full sm:w-fit brutal-button bg-primary-500 p-2 rounded-2xl cursor-pointer"
+              aria-label="Discover you platform score"
+            >
+              <div
+                class="flex flex-row items-center justify-center gap-2 p-4 sm:px-10 sm:py-6 rounded-lg"
+              >
+                <span aria-hidden="true" class="text-shadow-brutal"
+                  >Book a call</span
                 >
-              </p>
-            </div>
+              </div>
+            </a>
           </div>
         </div>
       </div>
