@@ -206,7 +206,7 @@
         </article>
       </div>
       <!-- Platforms marquee -->
-      <article id="platforms-we-work-with" class="flex flex-col">
+      <article id="platforms-we-work-with" class="flex flex-col" use:reveal>
         <h4 class="h6 text-center opacity-50 select-none">
           Platforms we work with
         </h4>
