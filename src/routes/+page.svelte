@@ -22,6 +22,7 @@
   let teamHeadshotsObserver = useIntersectionObserver({ threshold: 0.5 });
 
   let heroSectionObserver = useIntersectionObserver({ threshold: 0.5 });
+  let servicesSectionObserver = useIntersectionObserver({ threshold: 0.5 });
 
   onMount(() => {
     serviceCardsObserver.once = true;
@@ -71,7 +72,7 @@
       bind:this={heroSectionObserver.ref}
       id="hero-content"
       style={`background-image: url(${grid_background}); background-size: cover; background-attachment: fixed;`}
-      class={`py-20 min-h-[80vh] sticky top-0 border-t-2 border-deep-indigo border-dashed shadow-[0px_-96px_240px_60px] shadow-white ${heroSectionObserver.intersecting ? 'bg-primary-400' : 'bg-white'}`}
+      class={`py-30 min-h-[80vh] sticky top-0 border-t-2 border-deep-indigo   ${heroSectionObserver.intersecting ? 'bg-primary-400' : 'bg-white'}`}
     >
       <div
       use:reveal
@@ -165,7 +166,7 @@
 {/snippet}
 
 {#snippet ServicesSection()}
-  <section id="what-we-do" class="border-t-2 border-deep-indigo border-dashed">
+  <section id="what-we-do" style={`background-image: url(${grid_background}); background-size: cover; background-attachment: fixed;`} class={`border-t-2 border-deep-indigo  ${servicesSectionObserver.intersecting ? "bg-yellow" : "bg-white"}`} bind:this={servicesSectionObserver.ref}>
     <!-- Intro -->
     <div id="services-intro" class="py-30 sticky top-0">
       <div class="container mx-auto">
@@ -174,7 +175,8 @@
     </div>
     <!-- Services -->
     <div
-      class="pt-20 bg-white sticky top-0 shadow-[0px_-48px_120px_0px] shadow-white"
+    style={`background-image: url(${grid_background}); background-size: cover; background-attachment: fixed;`}
+      class={`pt-20  sticky top-0  ${servicesSectionObserver.intersecting ? "bg-yellow " : "bg-white "}`}
     >
       <div
         class="service-cards container mx-auto grid lg:grid-cols-3 gap-6 pb-20 px-3 lg:px-0 isolate"

@@ -242,7 +242,7 @@
   }
   /* Card */
   .card {
-    @apply border-2 rounded-xl p-12 bg-primary-100 drop-shadow-brutal;
+    @apply border-2 rounded-xl p-12 bg-yellow-400 drop-shadow-brutal-card;
   }
 }
 
