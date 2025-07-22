@@ -199,25 +199,55 @@
         bind:this={serviceCardsObserver.ref}
       >
         <article class="card">
-          <h3 class="mb-3">Consultation</h3>
-          <p>
-            Get expert, on-demand advice and tailored strategies. Book as needed
-            or choose ongoing support.
-          </p>
+          <div class="p-2 md:p-4 flex border-b-2 bg-deep-indigo" use:reveal={{ y: -20 }}>
+            <div class="flex gap-2 md:gap-3 items-center justify-center">
+              {#each Array.from({ length: 3 }) as item}
+                <span class="h-4 w-4 md:h-6 md:w-6 bg-yellow-500 rounded-full"
+              ></span>
+              {/each}
+            </div>
+          </div>
+          <div class="p-12">
+            <h3 class="mb-3">Consultation</h3>
+            <p>
+              Get expert, on-demand advice and tailored strategies. Book as needed
+              or choose ongoing support.
+            </p>
+          </div>
         </article>
         <article class="card z-10">
-          <h3 class="mb-3">Performance Marketing</h3>
-          <p>
-            Expand your reach beyond traditional platforms while maximizing end
-            results.
-          </p>
+          <div class="p-2 md:p-4 flex border-b-2 bg-deep-indigo" use:reveal={{ y: -20 }}>
+            <div class="flex gap-2 md:gap-3 items-center justify-center">
+              {#each Array.from({ length: 3 }) as item}
+                <span class="h-4 w-4 md:h-6 md:w-6 bg-yellow-500 rounded-full"
+              ></span>
+              {/each}
+            </div>
+          </div>
+          <div class="p-12">
+            <h3 class="mb-3">Performance Marketing</h3>
+            <p>
+              Expand your reach beyond traditional platforms while maximizing end
+              results.
+            </p>
+          </div>
         </article>
         <article class="card">
-          <h3 class="mb-3">Auditing</h3>
-          <p>
-            Receive a clear, actionable analysis and checklist to boost ROAS and
-            ad efficiency.
-          </p>
+          <div class="p-2 md:p-4 flex border-b-2 bg-deep-indigo" use:reveal={{ y: -20 }}>
+            <div class="flex gap-2 md:gap-3 items-center justify-center">
+              {#each Array.from({ length: 3 }) as item}
+                <span class="h-4 w-4 md:h-6 md:w-6 bg-yellow-500 rounded-full"
+              ></span>
+              {/each}
+            </div>
+          </div>
+          <div class="p-12">
+            <h3 class="mb-3">Auditing</h3>
+            <p>
+              Receive a clear, actionable analysis and checklist to boost ROAS and
+              ad efficiency.
+            </p>
+          </div>
         </article>
       </div>
       <!-- Platforms marquee -->
