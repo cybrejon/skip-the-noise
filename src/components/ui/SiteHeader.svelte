@@ -55,9 +55,12 @@
         >
           <a
             href="/free-trial"
-            class="brutal-button px-5 py-2 pr-12 rounded-md bg-primary-500 hover:bg-primary-400 active:bg-deep-indigo"
+            class="brutal-button px-5 py-2 pr-12 rounded-md bg-primary-500 hover:bg-primary-400 active:bg-deep-indigo inline-flex gap-4 items-center"
           >
-            <span class="text-shadow-brutal">Claim 2-week free trial</span>
+          <div class="h-3 w-3 rounded-full bg-yellow-500 flex items-center justify-center">
+            <div class="h-3 w-3 rounded-full bg-yellow-200 animate-ping"></div>
+          </div>
+            <span class="text-shadow-brutal">Claim 2-Week Free Trial</span>
           </a>
           <div
             class="absolute -top-2 -right-1 drop-shadow-brutal pointer-events-none"
