@@ -210,7 +210,7 @@
         <h4 class="h6 text-center opacity-50 select-none">
           Platforms we work with
         </h4>
-        <PlatformsMarquee />
+        <PlatformsMarquee intersecting={servicesSectionObserver.intersecting} />
       </article>
     </div>
   </section>

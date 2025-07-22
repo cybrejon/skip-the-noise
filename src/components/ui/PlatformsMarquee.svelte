@@ -1,6 +1,8 @@
 <script lang="ts">
   import { capitalizeFirstLetter } from "$lib/scripts/utils";
 
+  let { intersecting }: { intersecting?: boolean } = $props();
+
   let marquee: HTMLDivElement;
   let isAnimated: boolean = $state(false);
   const platforms: string[] = [
@@ -57,7 +59,7 @@
   <img
     src="/platforms/{platform}.svg"
     alt="{platform} logo"
-    class="size-20 lg:size-30 aspect-square opacity-50 hover:opacity-80"
+    class={`size-20 lg:size-30 aspect-square opacity-50 hover:opacity-80 ${intersecting && 'invert'}`}
     title={capitalizeFirstLetter(platform)}
   />
 {/snippet}
