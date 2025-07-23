@@ -54,10 +54,10 @@
           class="book-button-wrapper flex flex-row items-center gap-3 relative"
         >
           <a
-            href="/#"
+            href="/free-trial"
             class="brutal-button px-5 py-2 pr-12 rounded-md bg-primary-500 hover:bg-primary-400 active:bg-deep-indigo"
           >
-            <span class="text-shadow-brutal">Book a free strategy call</span>
+            <span class="text-shadow-brutal">Claim 2-week free trial</span>
           </a>
           <div
             class="absolute -top-2 -right-1 drop-shadow-brutal pointer-events-none"
@@ -99,10 +99,10 @@
         {/each}
         <li class="flex-row items-center gap-3 relative inline-block">
           <a
-            href="/#"
+            href="/free-trial"
             class="shadow-1 border-2 border-neutral-700 rounded-md bg-primary-500 font-bold text-primary-foreground flex gap-2 px-5 py-2 pr-12 items-center"
           >
-            Book a free strategy call
+            Claim 2-week free trial
           </a>
           <OrnamentStar
             class="absolute w-12 h-12 -top-2 -right-1 rotate-6 shadow-1"
