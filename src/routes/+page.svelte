@@ -9,7 +9,7 @@
   import Gradientify from "@components/ui/Gradientify.svelte";
   import { useIntersectionObserver } from "$lib/scripts/hooks.svelte";
   import { onMount } from "svelte";
-  import { reveal } from 'svelte-reveal';
+  import { reveal } from "svelte-reveal";
 
   let switcherooSamples: string[] = $state([
     "unnecessary calls",
@@ -72,30 +72,40 @@
       bind:this={heroSectionObserver.ref}
       id="hero-content"
       style={`background-image: url(${grid_background}); background-size: cover; background-attachment: fixed;`}
-      class={`py-30 min-h-[80vh] sticky top-0 border-t-2 border-deep-indigo   ${heroSectionObserver.intersecting ? 'bg-primary-400' : 'bg-white'}`}
+      class={`py-30 min-h-[80vh] sticky top-0 border-t-2 border-deep-indigo   ${heroSectionObserver.intersecting ? "bg-primary-400" : "bg-white"}`}
     >
       <div
-      use:reveal
+        use:reveal
         class="container mx-auto border-2 border-deep-indigo rounded-xl bg-primary-500 drop-shadow-brutal-card bg-bottom bg-cover overflow-hidden"
         style="background-image: url('/src/lib/images/bg_performance.svg');"
       >
-        <div class="p-2 md:p-4 flex border-b-2 bg-deep-indigo" use:reveal={{ y: -20 }}>
+        <div
+          class="p-2 md:p-4 flex border-b-2 bg-deep-indigo"
+          use:reveal={{ y: -20 }}
+        >
           <div class="flex gap-2 md:gap-3 items-center justify-center">
             {#each Array.from({ length: 3 }) as item}
-              <span class="h-4 w-4 md:h-6 md:w-6 bg-secondary-500 border-2 border-primary-foreground rounded-full"
-            ></span>
+              <span
+                class="h-4 w-4 md:h-6 md:w-6 bg-secondary-500 border-2 border-primary-foreground rounded-full"
+              ></span>
             {/each}
           </div>
         </div>
         <div
           class="flex px-3 py-12 md:py-24 flex-col justify-center items-center"
         >
-          <hgroup class="flex flex-col justify-center items-center px-6 pb-16 text-primary-foreground">
+          <hgroup
+            class="flex flex-col justify-center items-center px-6 pb-16 text-primary-foreground"
+          >
             <h1 class="text-center mb-[0.5em] tracking-tight">
               A <span class="text-nowrap">
-                <Gradientify>Perform<Icon icon='noto:trophy' style="display: inline-block; vertical-align: top;" />nce</Gradientify>
-              </span> Digital Media agency founded by former WPP Media
-              leads
+                <Gradientify
+                  >Perform<Icon
+                    icon="noto:trophy"
+                    style="display: inline-block; vertical-align: top;"
+                  />nce</Gradientify
+                >
+              </span> Digital Media agency founded by former WPP Media leads
             </h1>
             <p class="h5 text-center text-pretty">
               We're cutting through the noise to deliver what matters... <span
@@ -131,7 +141,7 @@
               />
             </a>
             <a
-              href="/#"
+              href="/free-trial"
               class="group inline-block text-white relative w-full sm:w-fit brutal-button bg-primary-500 p-2 rounded-2xl cursor-pointer"
               aria-label="Discover you platform score"
               use:reveal={{ x: 200, delay: 200 }}
@@ -166,7 +176,12 @@
 {/snippet}
 
 {#snippet ServicesSection()}
-  <section id="what-we-do" style={`background-image: url(${grid_background}); background-size: cover; background-attachment: fixed;`} class={`border-t-2 border-deep-indigo  ${servicesSectionObserver.intersecting ? "bg-yellow" : "bg-white"}`} bind:this={servicesSectionObserver.ref}>
+  <section
+    id="what-we-do"
+    style={`background-image: url(${grid_background}); background-size: cover; background-attachment: fixed;`}
+    class={`border-t-2 border-deep-indigo  ${servicesSectionObserver.intersecting ? "bg-yellow" : "bg-white"}`}
+    bind:this={servicesSectionObserver.ref}
+  >
     <!-- Intro -->
     <div id="services-intro" class="py-30 sticky top-0">
       <div class="container mx-auto">
@@ -175,7 +190,7 @@
     </div>
     <!-- Services -->
     <div
-    style={`background-image: url(${grid_background}); background-size: cover; background-attachment: fixed;`}
+      style={`background-image: url(${grid_background}); background-size: cover; background-attachment: fixed;`}
       class={`pt-20  sticky top-0  ${servicesSectionObserver.intersecting ? "bg-yellow " : "bg-white "}`}
     >
       <div
