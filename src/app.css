@@ -244,6 +244,10 @@
   .card {
     @apply border-2 rounded-xl p-12 bg-yellow-400 drop-shadow-brutal-card;
   }
+  /* Input */
+  .input {
+    @apply w-full border-2 border-deep-indigo outline-none focus:border-primary-500 bg-transparent focus:bg-white user-valid:bg-primary-50;
+  }
 }
 
 @layer base {
