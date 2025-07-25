@@ -23,6 +23,7 @@
   let heroSectionObserver = useIntersectionObserver({ threshold: 0.5 });
   let servicesSectionObserver = useIntersectionObserver({ threshold: 0.5 });
   let brandsSectionObserver = useIntersectionObserver({ threshold: 0.9 });
+  let teamSectionObserver = useIntersectionObserver({ threshold: 0.9 });
 
   onMount(() => {
     serviceCardsObserver.once = true;
@@ -85,9 +86,8 @@
         >
           <div class="flex gap-2 md:gap-3 items-center justify-center">
             {#each Array.from({ length: 3 }) as item}
-              <span
-                class="h-4 w-4 md:h-6 md:w-6 bg-secondary-500 border-2 border-primary-foreground rounded-full"
-              ></span>
+              <span class="h-4 w-4 md:h-6 md:w-6 bg-primary-foreground rounded-full"
+            ></span>
             {/each}
           </div>
         </div>
@@ -288,7 +288,7 @@
           </hgroup>
           <div class="h-full lg:flex-1/2 px-3 lg:px-0">
             <div
-              class="w-full h-full border-2 rounded-xl bg-primary-100 drop-shadow-brutal-card border-deep-indigo"
+              class="w-full h-full border-2 rounded-xl bg-yellow drop-shadow-brutal-card border-deep-indigo"
             ></div>
           </div>
         </div>
@@ -305,7 +305,7 @@
           </hgroup>
           <div class="h-full lg:flex-1/2 px-3 lg:px-0">
             <div
-              class="w-full h-full border-2 rounded-xl bg-primary-100 drop-shadow-brutal-card border-deep-indigo"
+              class="w-full h-full border-2 rounded-xl bg-yellow drop-shadow-brutal-card border-deep-indigo"
             ></div>
           </div>
         </div>
@@ -322,7 +322,7 @@
           </hgroup>
           <div class="h-full lg:flex-1/2 px-3 lg:px-0">
             <div
-              class="w-full h-full border-2 rounded-xl bg-primary-100 drop-shadow-brutal-card border-deep-indigo"
+              class="w-full h-full border-2 rounded-xl bg-yellow drop-shadow-brutal-card border-deep-indigo"
             ></div>
           </div>
         </div>
@@ -332,9 +332,11 @@
 {/snippet}
 
 {#snippet TeamSection()}
-  <section id="team" class="border-t-2 border-deep-indigo border-dashed">
+  <section id="team" class={`border-t-2 border-deep-indigo ${teamSectionObserver.intersecting ? "bg-deep-indigo text-primary-foreground border-transparent" : " bg-white"}`}
+    style={`background-image: url(${grid_background}); background-size: cover; background-attachment: fixed;`}
+  >
     <!-- Intro -->
-    <div id="team-intro" class="py-30 sticky top-0">
+    <div id="team-intro" class="py-30 sticky top-0" bind:this={teamSectionObserver.ref}>
       <hgroup class="container mx-auto">
         <h2 class="h4 text-center px-6 mb-[0.25em]">Meet Team Noise-Free</h2>
         <p class="text-center">
@@ -374,16 +376,17 @@
     </div>
     <!-- Details -->
     <div
-      class="sticky top-0 px-3 bg-white shadow-[0px_-48px_120px_0px] shadow-white"
+      class={`sticky top-0 px-3 ${teamSectionObserver.intersecting ? "bg-deep-indigo text-primary-foreground" : " bg-white"}`}
+      style={`background-image: url(${grid_background}); background-size: cover; background-attachment: fixed;`}
     >
-      <div class="container mx-auto grid lg:grid-cols-2 gap-6 py-20">
-        <article class="card">
+      <div class="container mx-auto grid lg:grid-cols-2 gap-6 pt-20 pb-30">
+        <article class="card-alt border-white p-12 ">
           <h3 class="mb-3">Zoha</h3>
           <p>Ex-WPP Director | Performance nerd</p>
           <p>Obsessed with ROAS + Reddit</p>
           <p>Loves cats and Apex Legends</p>
         </article>
-        <article class="card">
+        <article class="card-alt border-white  p-12">
           <h3 class="mb-3">Sonia</h3>
           <p>Ex-WPP | Rogers &rarr; Coca-Cola</p>
           <p>Gemini, natural talker, always real</p>
@@ -397,15 +400,16 @@
 {#snippet BookendSection()}
   <section
     id="bookend"
-    class=" pt-24 bg-white border-t-2 border-deep-indigo border-dashed"
+    class="text-primary-foreground pt-24 bg-deep-indigo"
+    style={`background-image: url(${grid_background}); background-size: cover; background-attachment: fixed;`}
   >
     <div class="container mx-auto">
-      <h6 class="text-jumbo text-center text-neutral-300 p-6">
+      <h6 class="text-jumbo text-center text-yellow p-6 tracking-tighter leading-28">
         People work with people.<br />We make it feel like that again.
       </h6>
 
       <div
-        class="flex justify-center items-center p-6 border-t border-deep-indigo"
+        class="flex justify-center items-center p-6 "
       >
         <small class=""
           >Copyright 2025 <span>&centerdot;</span> Skip the Noise Media</small
