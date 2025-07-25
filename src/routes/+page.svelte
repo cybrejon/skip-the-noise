@@ -20,9 +20,9 @@
   ]);
   let serviceCardsObserver = useIntersectionObserver({ threshold: 0.5 });
   let teamHeadshotsObserver = useIntersectionObserver({ threshold: 0.5 });
-
   let heroSectionObserver = useIntersectionObserver({ threshold: 0.5 });
   let servicesSectionObserver = useIntersectionObserver({ threshold: 0.5 });
+  let brandsSectionObserver = useIntersectionObserver({ threshold: 0.9 });
 
   onMount(() => {
     serviceCardsObserver.once = true;
@@ -179,7 +179,7 @@
   <section
     id="what-we-do"
     style={`background-image: url(${grid_background}); background-size: cover; background-attachment: fixed;`}
-    class={`border-t-2 border-deep-indigo  ${servicesSectionObserver.intersecting ? "bg-yellow" : "bg-white"}`}
+    class={`border-t-2 border-deep-indigo ${servicesSectionObserver.intersecting ? "bg-yellow" : "bg-white"}`}
     bind:this={servicesSectionObserver.ref}
   >
     <!-- Intro -->
@@ -264,21 +264,22 @@
 {#snippet BrandsSection()}
   <section
     id="featured-brands"
-    class="border-t-2 border-deep-indigo border-dashed"
+    class={`border-t-2 border-deep-indigo ${brandsSectionObserver.intersecting ? "bg-primary-400 text-primary-foreground" : ""}`}
+    style={`background-image: url(${grid_background}); background-size: cover; background-attachment: fixed;`}
   >
     <!-- Intro -->
-    <div id="brands-intro" class="py-30 sticky top-0">
+    <div id="brands-intro" class="py-30 sticky top-0" bind:this={brandsSectionObserver.ref} style={`background-image: url(${grid_background}); background-size: cover; background-attachment: fixed;`}>
       <div class="container mx-auto">
         <h2 class="h4 text-center px-6">Brands that found success with us</h2>
       </div>
     </div>
     <!-- Brands -->
-    <div class="grid gap-12 pb-30 bg-white">
+    <div class={`grid gap-12 pb-30 ${brandsSectionObserver ? "bg-primary-400 text-primary-foreground" : "bg-white"}`} style={`background-image: url(${grid_background}); background-size: cover; background-attachment: fixed;`}>
       <article
-        class="tile h-[60svh] sticky top-30 shadow-[0px_-48px_120px_0px] shadow-white"
+        class="tile h-[60svh] sticky top-30"
       >
         <div class="container mx-auto h-full flex flex-col lg:flex-row">
-          <hgroup class="px-6 py-15 lg:flex-1/2 bg-white">
+          <hgroup class={`px-6 py-15 lg:flex-1/2 ${brandsSectionObserver ? "bg-primary-400 text-primary-foreground" : "bg-white"}`} style={`background-image: url(${grid_background}); background-size: cover; background-attachment: fixed;`}>
             <h3 class="mb-[0.5em]">E-commerce</h3>
             <p>
               Turn browsers into buyers. We help brands grow sales by showing up
@@ -287,7 +288,7 @@
           </hgroup>
           <div class="h-full lg:flex-1/2 px-3 lg:px-0">
             <div
-              class="w-full h-full border-2 rounded-xl bg-primary-100 drop-shadow-brutal"
+              class="w-full h-full border-2 rounded-xl bg-primary-100 drop-shadow-brutal-card border-deep-indigo"
             ></div>
           </div>
         </div>
@@ -295,7 +296,7 @@
 
       <article class="tile h-[60svh] sticky top-30">
         <div class="container mx-auto h-full flex flex-col lg:flex-row">
-          <hgroup class="px-6 py-15 lg:flex-1/2 bg-white">
+          <hgroup class={`px-6 py-15 lg:flex-1/2 ${brandsSectionObserver ? "bg-primary-400 text-primary-foreground" : "bg-white"}`} style={`background-image: url(${grid_background}); background-size: cover; background-attachment: fixed;`}>
             <h3 class="mb-[0.5em]">SaaS</h3>
             <p>
               Fill your funnel with qualified leads. From demos to downloads, we
@@ -304,7 +305,7 @@
           </hgroup>
           <div class="h-full lg:flex-1/2 px-3 lg:px-0">
             <div
-              class="w-full h-full border-2 rounded-xl bg-primary-100 drop-shadow-brutal"
+              class="w-full h-full border-2 rounded-xl bg-primary-100 drop-shadow-brutal-card border-deep-indigo"
             ></div>
           </div>
         </div>
@@ -312,7 +313,7 @@
 
       <article class="tile h-[60svh] sticky top-30">
         <div class="container mx-auto h-full flex flex-col lg:flex-row">
-          <hgroup class="px-6 py-15 lg:flex-1/2 bg-white">
+          <hgroup class={`px-6 py-15 lg:flex-1/2 ${brandsSectionObserver ? "bg-primary-400 text-primary-foreground" : "bg-white"}`} style={`background-image: url(${grid_background}); background-size: cover; background-attachment: fixed;`}>
             <h3 class="mb-[0.5em]">Cybersecurity</h3>
             <p>
               Reach decision-makers before your competitors do. We target CISOs,
@@ -321,7 +322,7 @@
           </hgroup>
           <div class="h-full lg:flex-1/2 px-3 lg:px-0">
             <div
-              class="w-full h-full border-2 rounded-xl bg-primary-100 drop-shadow-brutal"
+              class="w-full h-full border-2 rounded-xl bg-primary-100 drop-shadow-brutal-card border-deep-indigo"
             ></div>
           </div>
         </div>
