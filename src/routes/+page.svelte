@@ -155,7 +155,7 @@
               </div>
             </a>
             <a
-              href="/#"
+              href="/discuss-painpoints"
               class="group inline-block text-white relative w-full sm:w-fit brutal-button bg-primary-500 p-2 rounded-2xl cursor-pointer"
               aria-label="Discover you platform score"
               use:reveal={{ x: 200, delay: 400 }}
@@ -164,7 +164,7 @@
                 class="flex flex-row items-center justify-center gap-2 p-4 sm:px-10 sm:py-6 rounded-lg"
               >
                 <span aria-hidden="true" class="text-shadow-brutal"
-                  >Book a call</span
+                  >Talk pain points</span
                 >
               </div>
             </a>
