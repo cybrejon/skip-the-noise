@@ -72,7 +72,7 @@
       bind:this={heroSectionObserver.ref}
       id="hero-content"
       style={`background-image: url(${grid_background}); background-size: cover; background-attachment: fixed;`}
-      class={`py-30 min-h-[80vh] sticky top-0 border-t-2 border-deep-indigo   ${heroSectionObserver.intersecting ? "bg-primary-400" : "bg-white"}`}
+      class={`py-30 min-h-[80vh] sticky top-0 border-t-2 border-deep-indigo   ${heroSectionObserver.intersecting ? 'bg-secondary-400' : 'bg-white'}`}
     >
       <div
         use:reveal
@@ -207,7 +207,7 @@
               {/each}
             </div>
           </div>
-          <div class="p-12">
+          <div class="p-12 text-secondary-foreground">
             <h3 class="mb-3">Consultation</h3>
             <p>
               Get expert, on-demand advice and tailored strategies. Book as needed
@@ -224,7 +224,7 @@
               {/each}
             </div>
           </div>
-          <div class="p-12">
+          <div class="p-12 text-secondary-foreground">
             <h3 class="mb-3">Performance Marketing</h3>
             <p>
               Expand your reach beyond traditional platforms while maximizing end
@@ -241,7 +241,7 @@
               {/each}
             </div>
           </div>
-          <div class="p-12">
+          <div class="p-12 text-secondary-foreground">
             <h3 class="mb-3">Auditing</h3>
             <p>
               Receive a clear, actionable analysis and checklist to boost ROAS and
