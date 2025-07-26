@@ -403,16 +403,26 @@
 {#snippet BookendSection()}
   <section
     id="bookend"
-    class="text-primary-foreground pt-24 bg-deep-indigo"
+    class="text-primary-foreground bg-deep-indigo pt-28 sm:h-dvh flex items-end sm:items-center justify-center"
     style={`background-image: url(${image_grid_background}); background-size: cover; background-attachment: fixed;`}
   >
     <div class="container mx-auto">
-      <h6 class="text-jumbo text-center text-yellow p-6 tracking-tighter leading-28">
-        People work with people.<br />We make it feel like that again.
+      <h6 class="text-jumbo sm:text-[8rem] lg:text-[12rem] text-center text-primary-foreground p-6 tracking-tighter leading-16 sm:leading-36 lg:leading-48">
+        People work with people...
       </h6>
-
+    </div>
+  </section>
+  <section
+    id="bookend"
+    class="text-primary-foreground bg-deep-indigo pb-28 sm:h-dvh flex items-start sm:items-center justify-center"
+    style={`background-image: url(${image_grid_background}); background-size: cover; background-attachment: fixed;`}
+  >
+    <div class="container mx-auto">
+      <h6 class="text-jumbo sm:text-[8rem] lg:text-[12rem] text-center text-yellow p-6 tracking-tighter leading-16 sm:leading-36 lg:leading-48">
+        We make it feel like that again.
+      </h6>
       <div
-        class="flex justify-center items-center p-6 "
+        class="flex justify-center items-center p-6 mt-12"
       >
         <small class=""
           >Copyright 2025 <span>&centerdot;</span> Skip the Noise Media</small
