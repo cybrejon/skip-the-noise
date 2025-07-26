@@ -231,6 +231,9 @@
 }
 
 @layer components {
+  .pill {
+    @apply border-primary-foreground border-1 rounded-full px-2 text-sm font-medium drop-shadow-[0_4px_var(--color-white)] bg-primary-500;
+  }
   .brutal-button {
     @apply drop-shadow-brutal active:drop-shadow-brutal-pressed hover:drop-shadow-brutal-hovered border-2 border-deep-indigo font-bold text-primary-foreground hover:bg-neutral-500 hover:-translate-y-1 active:translate-y-1;
   }

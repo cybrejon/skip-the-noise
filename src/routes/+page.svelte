@@ -387,9 +387,9 @@
           <h3 class="mb-5">Zoha</h3>
           <p class="font-medium">Ex-WPP Director 🞪 Performance nerd</p>
           <div class="flex gap-2 items-center justify-start mb-5">
-            <p class="border-primary-foreground border-1 rounded-full px-2 text-sm font-medium">Obsessed with ROAS</p>
+            <p class="pill">Obsessed with ROAS</p>
             <p >+</p>
-            <p class="border-primary-foreground border-1 rounded-full px-2 text-sm font-medium">Reddit</p>
+            <p class="pill">Reddit</p>
           </div>
           <p class="text-sm">Loves cats and Apex Legends</p>
         </article>
@@ -397,9 +397,9 @@
           <h3 class="mb-5">Sonia</h3>
           <p class="font-medium">Ex-WPP 🞪 Rogers &rarr; Coca-Cola</p>
           <div class="flex gap-2 items-center justify-start mb-5">
-            <p class="border-primary-foreground border-1 rounded-full px-2 text-sm font-medium">gemini</p>
-            <p class="border-primary-foreground border-1 rounded-full px-2 text-sm font-medium">natural talker</p>
-            <p class="border-primary-foreground border-1 rounded-full px-2 text-sm font-medium">always real</p>
+            <p class="pill">gemini</p>
+            <p class="pill">natural talker</p>
+            <p class="pill">always real</p>
           </div>
           <p class="text-sm">Brings good vibes and even better ideas</p>
         </article>
