@@ -415,7 +415,7 @@
     style={`background-image: url(${image_grid_background}); background-size: cover; background-attachment: fixed;`}
   >
     <div class="container mx-auto">
-      <h6 class="text-jumbo sm:text-[8rem] lg:text-[12rem] text-center text-primary-foreground p-6 tracking-tighter leading-16 sm:leading-36 lg:leading-48">
+      <h6 use:reveal class="text-jumbo sm:text-[8rem] lg:text-[12rem] text-center text-primary-foreground p-6 tracking-tighter leading-16 sm:leading-36 lg:leading-48">
         People work with people...
       </h6>
     </div>
@@ -426,13 +426,13 @@
     style={`background-image: url(${image_grid_background}); background-size: cover; background-attachment: fixed;`}
   >
     <div class="container mx-auto">
-      <h6 class="text-jumbo sm:text-[8rem] lg:text-[12rem] text-center text-yellow p-6 tracking-tighter leading-16 sm:leading-36 lg:leading-48">
+      <h6 use:reveal class="text-jumbo sm:text-[8rem] lg:text-[12rem] text-center text-yellow p-6 tracking-tighter leading-16 sm:leading-36 lg:leading-48">
         We make it feel like that again.
       </h6>
       <div
         class="flex justify-center items-center p-6 mt-12"
       >
-        <small class=""
+        <small use:reveal
           >Copyright 2025 <span>&centerdot;</span> Skip the Noise Media</small
         >
       </div>
