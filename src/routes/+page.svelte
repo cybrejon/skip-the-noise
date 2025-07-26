@@ -26,7 +26,6 @@
   let heroSectionObserver = useIntersectionObserver({ threshold: 0.5 });
   let servicesSectionObserver = useIntersectionObserver({ threshold: 0.5 });
   let brandsSectionObserver = useIntersectionObserver({ threshold: 0.9 });
-  let teamSectionObserver = useIntersectionObserver({ threshold: 0.9 });
 
   onMount(() => {
     serviceCardsObserver.once = true;
@@ -335,11 +334,11 @@
 {/snippet}
 
 {#snippet TeamSection()}
-  <section id="team" class={`border-t-2 border-deep-indigo ${teamSectionObserver.intersecting ? "bg-deep-indigo text-primary-foreground border-transparent" : " bg-white"}`}
+  <section id="team" class="bg-deep-indigo text-primary-foreground"
     style={`background-image: url(${image_grid_background}); background-size: cover; background-attachment: fixed;`}
   >
     <!-- Intro -->
-    <div id="team-intro" class="py-30 sticky top-0" bind:this={teamSectionObserver.ref}>
+    <div id="team-intro" class="py-30 sticky top-0">
       <hgroup class="container mx-auto">
         <h2 class="h4 text-center px-6 mb-[0.25em]">Meet Team Noise-Free</h2>
         <p class="text-center">
@@ -379,7 +378,7 @@
     </div>
     <!-- Details -->
     <div
-      class={`sticky top-0 px-3 ${teamSectionObserver.intersecting ? "bg-deep-indigo text-primary-foreground" : " bg-white"}`}
+      class="sticky top-0 px-3 bg-deep-indigo text-primary-foreground"
       style={`background-image: url(${image_grid_background}); background-size: cover; background-attachment: fixed;`}
     >
       <div class="container mx-auto grid lg:grid-cols-2 gap-6 pt-20 pb-30">
