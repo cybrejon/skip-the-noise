@@ -217,16 +217,16 @@
             </p>
           </div>
         </article>
-        <article class="card z-10" style={`background-image: url(${image_marketing_background}); background-size: cover; background-position: right;`}>
+        <article class="card bg-primary-300 z-10" style={`background-image: url(${image_marketing_background}); background-size: cover; background-position: right;`}>
           <div class="p-2 md:p-4 flex border-b-2 bg-deep-indigo" use:reveal={{ y: -20 }}>
             <div class="flex gap-2 md:gap-3 items-center justify-center">
               {#each Array.from({ length: 3 }) as item}
-                <span class="h-4 w-4 md:h-6 md:w-6 bg-yellow-500 rounded-full"
+                <span class="h-4 w-4 md:h-6 md:w-6 bg-primary-300 rounded-full"
               ></span>
               {/each}
             </div>
           </div>
-          <div class="p-12 text-secondary-foreground">
+          <div class="p-12 text-deep-indigo">
             <h3 class="mb-3">Performance Marketing</h3>
             <p>
               Expand your reach beyond traditional platforms while maximizing end
@@ -234,7 +234,7 @@
             </p>
           </div>
         </article>
-        <article class="card" style={`background-image: url(${image_auditing_background}); background-size: cover; background-position: right;`}>
+        <article class="card bg-yellow-500" style={`background-image: url(${image_auditing_background}); background-size: cover; background-position: right;`}>
           <div class="p-2 md:p-4 flex border-b-2 bg-deep-indigo" use:reveal={{ y: -20 }}>
             <div class="flex gap-2 md:gap-3 items-center justify-center">
               {#each Array.from({ length: 3 }) as item}
@@ -243,7 +243,7 @@
               {/each}
             </div>
           </div>
-          <div class="p-12 text-secondary-foreground">
+          <div class="p-12 text-deep-indigo">
             <h3 class="mb-3">Auditing</h3>
             <p>
               Receive a clear, actionable analysis and checklist to boost ROAS and
