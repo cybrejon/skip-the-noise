@@ -357,24 +357,24 @@
       <!-- Zoha -->
       <figure class="w-40 md:w-60 lg:w-80 absolute hover:z-10">
         <div
-          class="w-full aspect-square p-1 bg-white border-2 border-deep-indigo rounded-2xl overflow-hidden"
+          class="w-full aspect-square p-2 bg-white rounded-4xl shadow-[12px_12px_var(--color-yellow)]"
         >
-          <div class="w-full h-full bg-neutral-50 rounded-xl">
-            <!-- <img src="" alt="Photo of Zoha" class="" /> -->
+          <div class="w-full h-full bg-neutral-50 rounded-3xl overflow-hidden">
+            <img src="team/zoha.webp" alt="Sonia" />
           </div>
         </div>
-        <figcaption class="ps-3 opacity-50 text-start">Zoha</figcaption>
+        <figcaption class="ps-3 mt-6 opacity-50 text-start">Zoha</figcaption>
       </figure>
       <!-- Sonia -->
       <figure class="w-40 md:w-60 lg:w-80 absolute hover:z-10">
         <div
-          class="w-full aspect-square p-1 bg-white border-2 border-deep-indigo rounded-2xl overflow-hidden"
+          class="w-full aspect-square p-2 bg-white rounded-4xl shadow-[-12px_12px_var(--color-yellow)]"
         >
-          <div class="w-full h-full bg-neutral-50 rounded-xl">
-            <!-- <img src="" alt="Photo of Sonia" class="" /> -->
+          <div class="w-full h-full bg-neutral-50 rounded-3xl overflow-hidden">
+            <img src="team/sonia.webp" alt="Sonia" />
           </div>
         </div>
-        <figcaption class="pe-3 opacity-50 text-end">Sonia</figcaption>
+        <figcaption class="pe-3 mt-6 opacity-50 text-end">Sonia</figcaption>
       </figure>
     </div>
     <!-- Details -->
