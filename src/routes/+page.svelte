@@ -204,7 +204,7 @@
           <div class="p-2 md:p-4 flex border-b-2 bg-deep-indigo" use:reveal={{ y: -20 }}>
             <div class="flex gap-2 md:gap-3 items-center justify-center">
               {#each Array.from({ length: 3 }) as item}
-                <span class="h-4 w-4 md:h-6 md:w-6 bg-yellow-500 rounded-full"
+                <span class="h-4 w-4 md:h-6 md:w-6 bg-secondary-400 rounded-full"
               ></span>
               {/each}
             </div>
