@@ -27,7 +27,7 @@
   /* STYLES */
   --drop-shadow-brutal: 0 4px var(--color-deep-indigo);
   --drop-shadow-brutal-card: 0 12px var(--color-deep-indigo);
-  --drop-shadow-brutal-card-alt: 0 12px #ffffff;
+  --drop-shadow-brutal-card-alt: 0 12px var(--color-yellow);
   --drop-shadow-brutal-hovered: 0 8px var(--color-deep-indigo);
   --drop-shadow-brutal-pressed: 0 2px var(--color-deep-indigo);
   --text-shadow-brutal: 1px 2px var(--color-deep-indigo); /* text keyline/hinting for foreground text on primary colors */
@@ -246,7 +246,7 @@
     @apply border-2 rounded-xl overflow-hidden bg-secondary-400 drop-shadow-brutal-card;
   }
   .card-alt {
-    @apply border-2 rounded-xl overflow-hidden bg-secondary-500 drop-shadow-brutal-card-alt;
+    @apply border-2 rounded-xl overflow-hidden bg-primary-500 drop-shadow-brutal-card-alt border-dashed;
   }
   /* Input */
   .input {

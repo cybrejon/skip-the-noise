@@ -383,17 +383,25 @@
       style={`background-image: url(${image_grid_background}); background-size: cover; background-attachment: fixed;`}
     >
       <div class="container mx-auto grid lg:grid-cols-2 gap-6 pt-20 pb-30">
-        <article class="card-alt border-white p-12 ">
-          <h3 class="mb-3">Zoha</h3>
-          <p>Ex-WPP Director | Performance nerd</p>
-          <p>Obsessed with ROAS + Reddit</p>
-          <p>Loves cats and Apex Legends</p>
+        <article class="card-alt border-yellow p-12 space-y-2">
+          <h3 class="mb-5">Zoha</h3>
+          <p class="font-medium">Ex-WPP Director 🞪 Performance nerd</p>
+          <div class="flex gap-2 items-center justify-start mb-5">
+            <p class="border-primary-foreground border-1 rounded-full px-2 text-sm font-medium">Obsessed with ROAS</p>
+            <p >+</p>
+            <p class="border-primary-foreground border-1 rounded-full px-2 text-sm font-medium">Reddit</p>
+          </div>
+          <p class="text-sm">Loves cats and Apex Legends</p>
         </article>
-        <article class="card-alt border-white  p-12">
-          <h3 class="mb-3">Sonia</h3>
-          <p>Ex-WPP | Rogers &rarr; Coca-Cola</p>
-          <p>Gemini, natural talker, always real</p>
-          <p>Brings good vibes and even better ideas</p>
+        <article class="card-alt border-yellow p-12 space-y-2">
+          <h3 class="mb-5">Sonia</h3>
+          <p class="font-medium">Ex-WPP 🞪 Rogers &rarr; Coca-Cola</p>
+          <div class="flex gap-2 items-center justify-start mb-5">
+            <p class="border-primary-foreground border-1 rounded-full px-2 text-sm font-medium">gemini</p>
+            <p class="border-primary-foreground border-1 rounded-full px-2 text-sm font-medium">natural talker</p>
+            <p class="border-primary-foreground border-1 rounded-full px-2 text-sm font-medium">always real</p>
+          </div>
+          <p class="text-sm">Brings good vibes and even better ideas</p>
         </article>
       </div>
     </div>
