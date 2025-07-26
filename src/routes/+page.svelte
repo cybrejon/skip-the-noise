@@ -3,7 +3,10 @@
   import SiteHeader from "@components/ui/SiteHeader.svelte";
   import Switcheroo from "@components/ui/Switcheroo.svelte";
   import { ArrowRightIcon } from "lucide-svelte";
-  import grid_background from "$lib/images/grid.svg";
+  import image_grid_background from "$lib/images/grid.svg";
+  import image_consultation_background from "$lib/images/bg_consultation.svg";
+  import image_marketing_background from "$lib/images/bg_marketing.svg";
+  import image_auditing_background from "$lib/images/bg_auditing.svg";
   import Icon from "@iconify/svelte";
   import OrnamentCursor from "$lib/images/cursor.svg.svelte";
   import Gradientify from "@components/ui/Gradientify.svelte";
@@ -47,7 +50,7 @@
       id="splash"
       class="h-svh sticky top-0"
       aria-hidden="true"
-      style={`background-image: url(${grid_background}); background-size: cover;`}
+      style={`background-image: url(${image_grid_background}); background-size: cover;`}
     >
       <div class="container mx-auto h-full grid grid-cols-1 xl:grid-cols-2">
         <div class="flex justify-start items-center py-12 px-6 drop">
@@ -72,7 +75,7 @@
     <div
       bind:this={heroSectionObserver.ref}
       id="hero-content"
-      style={`background-image: url(${grid_background}); background-size: cover; background-attachment: fixed;`}
+      style={`background-image: url(${image_grid_background}); background-size: cover; background-attachment: fixed;`}
       class={`py-30 min-h-[80vh] sticky top-0 border-t-2 border-deep-indigo   ${heroSectionObserver.intersecting ? 'bg-secondary-400' : 'bg-white'}`}
     >
       <div
@@ -178,7 +181,7 @@
 {#snippet ServicesSection()}
   <section
     id="what-we-do"
-    style={`background-image: url(${grid_background}); background-size: cover; background-attachment: fixed;`}
+    style={`background-image: url(${image_grid_background}); background-size: cover; background-attachment: fixed;`}
     class={`border-t-2 border-deep-indigo ${servicesSectionObserver.intersecting ? "bg-yellow" : "bg-white"}`}
     bind:this={servicesSectionObserver.ref}
   >
@@ -190,7 +193,7 @@
     </div>
     <!-- Services -->
     <div
-      style={`background-image: url(${grid_background}); background-size: cover; background-attachment: fixed;`}
+      style={`background-image: url(${image_grid_background}); background-size: cover; background-attachment: fixed;`}
       class={`pt-20  sticky top-0  ${servicesSectionObserver.intersecting ? "bg-yellow " : "bg-white "}`}
     >
       <div
@@ -198,7 +201,7 @@
         class:observed={serviceCardsObserver.intersecting}
         bind:this={serviceCardsObserver.ref}
       >
-        <article class="card">
+        <article class="card" style={`background-image: url(${image_consultation_background}); background-size: cover; background-position: right;`}>
           <div class="p-2 md:p-4 flex border-b-2 bg-deep-indigo" use:reveal={{ y: -20 }}>
             <div class="flex gap-2 md:gap-3 items-center justify-center">
               {#each Array.from({ length: 3 }) as item}
@@ -215,7 +218,7 @@
             </p>
           </div>
         </article>
-        <article class="card z-10">
+        <article class="card z-10" style={`background-image: url(${image_marketing_background}); background-size: cover; background-position: right;`}>
           <div class="p-2 md:p-4 flex border-b-2 bg-deep-indigo" use:reveal={{ y: -20 }}>
             <div class="flex gap-2 md:gap-3 items-center justify-center">
               {#each Array.from({ length: 3 }) as item}
@@ -232,7 +235,7 @@
             </p>
           </div>
         </article>
-        <article class="card">
+        <article class="card" style={`background-image: url(${image_auditing_background}); background-size: cover; background-position: right;`}>
           <div class="p-2 md:p-4 flex border-b-2 bg-deep-indigo" use:reveal={{ y: -20 }}>
             <div class="flex gap-2 md:gap-3 items-center justify-center">
               {#each Array.from({ length: 3 }) as item}
@@ -265,21 +268,21 @@
   <section
     id="featured-brands"
     class={`border-t-2 border-deep-indigo ${brandsSectionObserver.intersecting ? "bg-primary-400 text-primary-foreground" : ""}`}
-    style={`background-image: url(${grid_background}); background-size: cover; background-attachment: fixed;`}
+    style={`background-image: url(${image_grid_background}); background-size: cover; background-attachment: fixed;`}
   >
     <!-- Intro -->
-    <div id="brands-intro" class="py-30 sticky top-0" bind:this={brandsSectionObserver.ref} style={`background-image: url(${grid_background}); background-size: cover; background-attachment: fixed;`}>
+    <div id="brands-intro" class="py-30 sticky top-0" bind:this={brandsSectionObserver.ref} style={`background-image: url(${image_grid_background}); background-size: cover; background-attachment: fixed;`}>
       <div class="container mx-auto">
         <h2 class="h4 text-center px-6">Brands that found success with us</h2>
       </div>
     </div>
     <!-- Brands -->
-    <div class={`grid gap-12 pb-30 ${brandsSectionObserver ? "bg-primary-400 text-primary-foreground" : "bg-white"}`} style={`background-image: url(${grid_background}); background-size: cover; background-attachment: fixed;`}>
+    <div class={`grid gap-12 pb-30 ${brandsSectionObserver ? "bg-primary-400 text-primary-foreground" : "bg-white"}`} style={`background-image: url(${image_grid_background}); background-size: cover; background-attachment: fixed;`}>
       <article
         class="tile h-[60svh] sticky top-30"
       >
         <div class="container mx-auto h-full flex flex-col lg:flex-row">
-          <hgroup class={`px-6 py-15 lg:flex-1/2 ${brandsSectionObserver ? "bg-primary-400 text-primary-foreground" : "bg-white"}`} style={`background-image: url(${grid_background}); background-size: cover; background-attachment: fixed;`}>
+          <hgroup class={`px-6 py-15 lg:flex-1/2 ${brandsSectionObserver ? "bg-primary-400 text-primary-foreground" : "bg-white"}`} style={`background-image: url(${image_grid_background}); background-size: cover; background-attachment: fixed;`}>
             <h3 class="mb-[0.5em]">E-commerce</h3>
             <p>
               Turn browsers into buyers. We help brands grow sales by showing up
@@ -296,7 +299,7 @@
 
       <article class="tile h-[60svh] sticky top-30">
         <div class="container mx-auto h-full flex flex-col lg:flex-row">
-          <hgroup class={`px-6 py-15 lg:flex-1/2 ${brandsSectionObserver ? "bg-primary-400 text-primary-foreground" : "bg-white"}`} style={`background-image: url(${grid_background}); background-size: cover; background-attachment: fixed;`}>
+          <hgroup class={`px-6 py-15 lg:flex-1/2 ${brandsSectionObserver ? "bg-primary-400 text-primary-foreground" : "bg-white"}`} style={`background-image: url(${image_grid_background}); background-size: cover; background-attachment: fixed;`}>
             <h3 class="mb-[0.5em]">SaaS</h3>
             <p>
               Fill your funnel with qualified leads. From demos to downloads, we
@@ -313,7 +316,7 @@
 
       <article class="tile h-[60svh] sticky top-30">
         <div class="container mx-auto h-full flex flex-col lg:flex-row">
-          <hgroup class={`px-6 py-15 lg:flex-1/2 ${brandsSectionObserver ? "bg-primary-400 text-primary-foreground" : "bg-white"}`} style={`background-image: url(${grid_background}); background-size: cover; background-attachment: fixed;`}>
+          <hgroup class={`px-6 py-15 lg:flex-1/2 ${brandsSectionObserver ? "bg-primary-400 text-primary-foreground" : "bg-white"}`} style={`background-image: url(${image_grid_background}); background-size: cover; background-attachment: fixed;`}>
             <h3 class="mb-[0.5em]">Cybersecurity</h3>
             <p>
               Reach decision-makers before your competitors do. We target CISOs,
@@ -333,7 +336,7 @@
 
 {#snippet TeamSection()}
   <section id="team" class={`border-t-2 border-deep-indigo ${teamSectionObserver.intersecting ? "bg-deep-indigo text-primary-foreground border-transparent" : " bg-white"}`}
-    style={`background-image: url(${grid_background}); background-size: cover; background-attachment: fixed;`}
+    style={`background-image: url(${image_grid_background}); background-size: cover; background-attachment: fixed;`}
   >
     <!-- Intro -->
     <div id="team-intro" class="py-30 sticky top-0" bind:this={teamSectionObserver.ref}>
@@ -377,7 +380,7 @@
     <!-- Details -->
     <div
       class={`sticky top-0 px-3 ${teamSectionObserver.intersecting ? "bg-deep-indigo text-primary-foreground" : " bg-white"}`}
-      style={`background-image: url(${grid_background}); background-size: cover; background-attachment: fixed;`}
+      style={`background-image: url(${image_grid_background}); background-size: cover; background-attachment: fixed;`}
     >
       <div class="container mx-auto grid lg:grid-cols-2 gap-6 pt-20 pb-30">
         <article class="card-alt border-white p-12 ">
@@ -401,7 +404,7 @@
   <section
     id="bookend"
     class="text-primary-foreground pt-24 bg-deep-indigo"
-    style={`background-image: url(${grid_background}); background-size: cover; background-attachment: fixed;`}
+    style={`background-image: url(${image_grid_background}); background-size: cover; background-attachment: fixed;`}
   >
     <div class="container mx-auto">
       <h6 class="text-jumbo text-center text-yellow p-6 tracking-tighter leading-28">
