@@ -1,6 +1,7 @@
 <script lang="ts">
   import SiteHeader from "@components/ui/SiteHeader.svelte";
   import Icon from "@iconify/svelte";
+  import image_grid_background from "$lib/images/grid.svg";
 
   type Goal =
     | "Test a new platform"
@@ -45,7 +46,7 @@
 
 <SiteHeader />
 
-<main class="isolate w-full overflow-x-clip">
+<main class="isolate w-full overflow-x-clip" style={`background-image: url(${image_grid_background}); background-size: cover;`}>
   <!-- <div class="container mx-auto grid md:grid-cols-2">
   </div> -->
   {@render HeroSection()}
