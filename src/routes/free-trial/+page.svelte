@@ -84,20 +84,32 @@
 
       <div class="">
         <div
-          class="card bg-primary-500 text-white border-2 border-deep-indigo drop-shadow-brutal-card"
+          class="card bg-primary-500 border-2 border-deep-indigo drop-shadow-brutal-card"
         >
-          <h6 class="">What's included:</h6>
-          <ul class="list-disc pl-6">
-            <li>
-              <p>We listen</p>
-            </li>
-            <li>
-              <p>We plan</p>
-            </li>
-            <li>
-              <p>We work</p>
-            </li>
-          </ul>
+                <div
+          class="p-2 md:p-4 flex border-b-2 bg-deep-indigo"
+        >
+          <div class="flex gap-2 md:gap-3 items-center justify-center">
+            {#each Array.from({ length: 3 }) as item}
+              <span class="h-4 w-4 md:h-6 md:w-6 bg-primary-400 rounded-full"
+            ></span>
+            {/each}
+          </div>
+        </div>
+          <div class="p-12 text-primary-foreground">
+            <h6 class="text-5xl">What's included:</h6>
+            <ul>
+              <li class="flex items-center gap-2">
+                <Icon icon="openmoji:check-mark" style='font-size: 2.5rem;' /><p class="text-lg">We listen</p>
+              </li>
+              <li class="flex items-center gap-2">
+                <Icon icon="openmoji:check-mark" style='font-size: 2.5rem;' /><p class="text-lg">We plan</p>
+              </li>
+              <li class="flex items-center gap-2">
+                <Icon icon="openmoji:check-mark" style='font-size: 2.5rem;' /><p class="text-lg">We work</p>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -108,18 +120,18 @@
   <section id="trial-form" class="py-12 px-3 md:px-6">
     <div class="container mx-auto">
       <h2 class="h4 text-center">
-        Just fill out the form, we'll email you with next steps.
+        Just fill out the form, <br />we'll email you with next steps.
       </h2>
 
       <!-- TODO: Add functionality to this form -->
       <form
-        class="card max-w-2xl p-4 md:p-12 mx-auto mt-6 grid gap-6 bg-white border-2 border-deep-indigo drop-shadow-brutal-card"
+        class="card max-w-2xl p-4 md:p-12 mx-auto mt-6 grid gap-6 bg-yellow-100 border-2 border-deep-indigo drop-shadow-brutal-card"
         onsubmit={(ev) => {
           ev.preventDefault();
         }}
       >
         <fieldset class="grid md:grid-cols-2 gap-3">
-          <label class="">
+          <label class="font-semibold tracking-tight">
             <p>First Name</p>
             <input
               type="text"
@@ -130,7 +142,7 @@
               required
             />
           </label>
-          <label class="">
+          <label class="font-semibold tracking-tight">
             <p>Last Name</p>
             <input
               type="text"
@@ -143,7 +155,7 @@
           </label>
         </fieldset>
 
-        <label class="">
+        <label class="font-semibold tracking-tight">
           <p>Job Title</p>
           <input
             type="text"
@@ -155,7 +167,7 @@
           />
         </label>
 
-        <label class="">
+        <label class="font-semibold tracking-tight">
           <p>Business Email</p>
           <input
             type="email"
@@ -167,7 +179,7 @@
           />
         </label>
 
-        <label class="">
+        <label class="font-semibold tracking-tight">
           <p>Website URL</p>
           <input
             type="url"
@@ -183,7 +195,7 @@
           class="grid gap-3"
           data-option={trialFormData.adBudgetOver20k}
         >
-          <p>Is your ad budget greater than $20K per month?</p>
+          <p class="font-semibold tracking-tight">Is your ad budget greater than $20K per month?</p>
           <div class="relative grid grid-cols-2 gap-3">
             <label
               class=" flex justify-center items-center py-3 rounded-sm border-2 border-deep-indigo cursor-pointer
@@ -219,7 +231,7 @@
         </fieldset>
 
         <fieldset class="grid gap-3" data-goal={trialFormData.trialGoal}>
-          <p>What's your goal for the trial?</p>
+          <p class="font-semibold tracking-tight">What's your goal for the trial?</p>
           <select
             name="trial-goal"
             id="trial-goal"
@@ -260,12 +272,8 @@
     class=" pt-24 bg-white border-t-2 border-deep-indigo border-dashed"
   >
     <div class="container mx-auto">
-      <h6 class="text-jumbo text-center text-neutral-300 p-6">
-        People work with people.<br />We make it feel like that again.
-      </h6>
-
       <div
-        class="flex justify-center items-center p-6 border-t border-deep-indigo"
+        class="flex justify-center items-center p-6"
       >
         <small class=""
           >Copyright 2025 <span>&centerdot;</span> Skip the Noise Media</small
@@ -274,3 +282,11 @@
     </div>
   </section>
 {/snippet}
+
+<style>
+  @reference "../../app.css";
+
+  input, select {
+    @apply rounded-sm;
+  }
+</style>
