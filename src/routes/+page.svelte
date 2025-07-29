@@ -13,6 +13,7 @@
   import { useIntersectionObserver } from "$lib/scripts/hooks.svelte";
   import { onMount } from "svelte";
   import { reveal } from "svelte-reveal";
+  import ScrollToTopButton from "@components/ui/ScrollToTopButton.svelte";
 
   let switcherooSamples: string[] = $state([
     "unnecessary calls",
@@ -27,8 +28,13 @@
   let servicesSectionObserver = useIntersectionObserver({ threshold: 0.5 });
   let brandsSectionObserver = useIntersectionObserver({ threshold: 0.9 });
 
+  function scrollToTop() {
+    window.scrollTo(0, 0);
+  }
+
   onMount(() => {
     serviceCardsObserver.once = true;
+    teamHeadshotsObserver.once = true;
   });
 </script>
 
@@ -40,6 +46,7 @@
   {@render BrandsSection()}
   {@render TeamSection()}
   {@render BookendSection()}
+  <ScrollToTopButton clicked={scrollToTop} />
 </main>
 
 {#snippet HeroSection()}
@@ -75,7 +82,7 @@
       bind:this={heroSectionObserver.ref}
       id="hero-content"
       style={`background-image: url(${image_grid_background}); background-size: cover; background-attachment: fixed;`}
-      class={`py-30 min-h-[80vh] sticky top-0 border-t-2 border-deep-indigo   ${heroSectionObserver.intersecting ? 'bg-secondary-400' : 'bg-white'}`}
+      class={`py-30 min-h-[80vh] sticky top-0 border-t-2 border-deep-indigo   ${heroSectionObserver.intersecting ? "bg-secondary-400" : "bg-white"}`}
     >
       <div
         use:reveal
@@ -88,8 +95,9 @@
         >
           <div class="flex gap-2 md:gap-3 items-center justify-center">
             {#each Array.from({ length: 3 }) as item}
-              <span class="h-4 w-4 md:h-6 md:w-6 bg-primary-foreground rounded-full"
-            ></span>
+              <span
+                class="h-4 w-4 md:h-6 md:w-6 bg-primary-foreground rounded-full"
+              ></span>
             {/each}
           </div>
         </div>
@@ -200,54 +208,73 @@
         class:observed={serviceCardsObserver.intersecting}
         bind:this={serviceCardsObserver.ref}
       >
-        <article class="card" style={`background-image: url(${image_consultation_background}); background-size: cover; background-position: right;`}>
-          <div class="p-2 md:p-4 flex border-b-2 bg-deep-indigo" use:reveal={{ y: -20 }}>
+        <article
+          class="card"
+          style={`background-image: url(${image_consultation_background}); background-size: cover; background-position: right;`}
+        >
+          <div
+            class="p-2 md:p-4 flex border-b-2 bg-deep-indigo"
+            use:reveal={{ y: -20 }}
+          >
             <div class="flex gap-2 md:gap-3 items-center justify-center">
               {#each Array.from({ length: 3 }) as item}
-                <span class="h-4 w-4 md:h-6 md:w-6 bg-secondary-400 rounded-full"
-              ></span>
+                <span
+                  class="h-4 w-4 md:h-6 md:w-6 bg-secondary-400 rounded-full"
+                ></span>
               {/each}
             </div>
           </div>
           <div class="p-12 text-secondary-foreground">
             <h3 class="mb-3">Consultation</h3>
             <p>
-              Get expert, on-demand advice and tailored strategies. Book as needed
-              or choose ongoing support.
+              Get expert, on-demand advice and tailored strategies. Book as
+              needed or choose ongoing support.
             </p>
           </div>
         </article>
-        <article class="card bg-primary-300 z-10" style={`background-image: url(${image_marketing_background}); background-size: cover; background-position: right;`}>
-          <div class="p-2 md:p-4 flex border-b-2 bg-deep-indigo" use:reveal={{ y: -20 }}>
+        <article
+          class="card bg-primary-300 z-10"
+          style={`background-image: url(${image_marketing_background}); background-size: cover; background-position: right;`}
+        >
+          <div
+            class="p-2 md:p-4 flex border-b-2 bg-deep-indigo"
+            use:reveal={{ y: -20 }}
+          >
             <div class="flex gap-2 md:gap-3 items-center justify-center">
               {#each Array.from({ length: 3 }) as item}
                 <span class="h-4 w-4 md:h-6 md:w-6 bg-primary-300 rounded-full"
-              ></span>
+                ></span>
               {/each}
             </div>
           </div>
           <div class="p-12 text-deep-indigo">
             <h3 class="mb-3">Performance Marketing</h3>
             <p>
-              Expand your reach beyond traditional platforms while maximizing end
-              results.
+              Expand your reach beyond traditional platforms while maximizing
+              end results.
             </p>
           </div>
         </article>
-        <article class="card bg-yellow-500" style={`background-image: url(${image_auditing_background}); background-size: cover; background-position: right;`}>
-          <div class="p-2 md:p-4 flex border-b-2 bg-deep-indigo" use:reveal={{ y: -20 }}>
+        <article
+          class="card bg-yellow-500"
+          style={`background-image: url(${image_auditing_background}); background-size: cover; background-position: right;`}
+        >
+          <div
+            class="p-2 md:p-4 flex border-b-2 bg-deep-indigo"
+            use:reveal={{ y: -20 }}
+          >
             <div class="flex gap-2 md:gap-3 items-center justify-center">
               {#each Array.from({ length: 3 }) as item}
                 <span class="h-4 w-4 md:h-6 md:w-6 bg-yellow-500 rounded-full"
-              ></span>
+                ></span>
               {/each}
             </div>
           </div>
           <div class="p-12 text-deep-indigo">
             <h3 class="mb-3">Auditing</h3>
             <p>
-              Receive a clear, actionable analysis and checklist to boost ROAS and
-              ad efficiency.
+              Receive a clear, actionable analysis and checklist to boost ROAS
+              and ad efficiency.
             </p>
           </div>
         </article>
@@ -270,18 +297,27 @@
     style={`background-image: url(${image_grid_background}); background-size: cover; background-attachment: fixed;`}
   >
     <!-- Intro -->
-    <div id="brands-intro" class="py-30 sticky top-0" bind:this={brandsSectionObserver.ref} style={`background-image: url(${image_grid_background}); background-size: cover; background-attachment: fixed;`}>
+    <div
+      id="brands-intro"
+      class="py-30 sticky top-0"
+      bind:this={brandsSectionObserver.ref}
+      style={`background-image: url(${image_grid_background}); background-size: cover; background-attachment: fixed;`}
+    >
       <div class="container mx-auto">
         <h2 class="h4 text-center px-6">Brands that found success with us</h2>
       </div>
     </div>
     <!-- Brands -->
-    <div class={`grid gap-12 pb-30 ${brandsSectionObserver ? "bg-primary-400 text-primary-foreground" : "bg-white"}`} style={`background-image: url(${image_grid_background}); background-size: cover; background-attachment: fixed;`}>
-      <article
-        class="tile h-[60svh] sticky top-30"
-      >
+    <div
+      class={`grid gap-12 pb-30 ${brandsSectionObserver ? "bg-primary-400 text-primary-foreground" : "bg-white"}`}
+      style={`background-image: url(${image_grid_background}); background-size: cover; background-attachment: fixed;`}
+    >
+      <article class="tile h-[60svh] sticky top-30">
         <div class="container mx-auto h-full flex flex-col lg:flex-row">
-          <hgroup class={`px-6 py-15 lg:flex-1/2 ${brandsSectionObserver ? "bg-primary-400 text-primary-foreground" : "bg-white"}`} style={`background-image: url(${image_grid_background}); background-size: cover; background-attachment: fixed;`}>
+          <hgroup
+            class={`px-6 py-15 lg:flex-1/2 ${brandsSectionObserver ? "bg-primary-400 text-primary-foreground" : "bg-white"}`}
+            style={`background-image: url(${image_grid_background}); background-size: cover; background-attachment: fixed;`}
+          >
             <h3 class="mb-[0.5em]">E-commerce</h3>
             <p>
               Turn browsers into buyers. We help brands grow sales by showing up
@@ -298,7 +334,10 @@
 
       <article class="tile h-[60svh] sticky top-30">
         <div class="container mx-auto h-full flex flex-col lg:flex-row">
-          <hgroup class={`px-6 py-15 lg:flex-1/2 ${brandsSectionObserver ? "bg-primary-400 text-primary-foreground" : "bg-white"}`} style={`background-image: url(${image_grid_background}); background-size: cover; background-attachment: fixed;`}>
+          <hgroup
+            class={`px-6 py-15 lg:flex-1/2 ${brandsSectionObserver ? "bg-primary-400 text-primary-foreground" : "bg-white"}`}
+            style={`background-image: url(${image_grid_background}); background-size: cover; background-attachment: fixed;`}
+          >
             <h3 class="mb-[0.5em]">SaaS</h3>
             <p>
               Fill your funnel with qualified leads. From demos to downloads, we
@@ -315,7 +354,10 @@
 
       <article class="tile h-[60svh] sticky top-30">
         <div class="container mx-auto h-full flex flex-col lg:flex-row">
-          <hgroup class={`px-6 py-15 lg:flex-1/2 ${brandsSectionObserver ? "bg-primary-400 text-primary-foreground" : "bg-white"}`} style={`background-image: url(${image_grid_background}); background-size: cover; background-attachment: fixed;`}>
+          <hgroup
+            class={`px-6 py-15 lg:flex-1/2 ${brandsSectionObserver ? "bg-primary-400 text-primary-foreground" : "bg-white"}`}
+            style={`background-image: url(${image_grid_background}); background-size: cover; background-attachment: fixed;`}
+          >
             <h3 class="mb-[0.5em]">Cybersecurity</h3>
             <p>
               Reach decision-makers before your competitors do. We target CISOs,
@@ -334,7 +376,9 @@
 {/snippet}
 
 {#snippet TeamSection()}
-  <section id="team" class="bg-deep-indigo text-primary-foreground"
+  <section
+    id="team"
+    class="bg-deep-indigo text-primary-foreground"
     style={`background-image: url(${image_grid_background}); background-size: cover; background-attachment: fixed;`}
   >
     <!-- Intro -->
@@ -387,7 +431,7 @@
           <p class="font-medium">Ex-WPP Director 🞪 Performance nerd</p>
           <div class="flex gap-2 items-center justify-start mb-5">
             <p class="pill">Obsessed with ROAS</p>
-            <p >+</p>
+            <p>+</p>
             <p class="pill">Reddit</p>
           </div>
           <p class="text-sm">Loves cats and Apex Legends</p>
@@ -414,7 +458,10 @@
     style={`background-image: url(${image_grid_background}); background-size: cover; background-attachment: fixed;`}
   >
     <div class="container mx-auto">
-      <h6 use:reveal class="text-jumbo sm:text-[8rem] lg:text-[12rem] text-center text-primary-foreground p-6 tracking-tighter leading-16 sm:leading-36 lg:leading-48">
+      <h6
+        use:reveal
+        class="text-jumbo sm:text-[8rem] lg:text-[12rem] text-center text-primary-foreground p-6 tracking-tighter leading-16 sm:leading-36 lg:leading-48"
+      >
         People work with people...
       </h6>
     </div>
@@ -425,12 +472,13 @@
     style={`background-image: url(${image_grid_background}); background-size: cover; background-attachment: fixed;`}
   >
     <div class="container mx-auto">
-      <h6 use:reveal class="text-jumbo sm:text-[8rem] lg:text-[12rem] text-center text-yellow p-6 tracking-tighter leading-16 sm:leading-36 lg:leading-48">
+      <h6
+        use:reveal
+        class="text-jumbo sm:text-[8rem] lg:text-[12rem] text-center text-yellow p-6 tracking-tighter leading-16 sm:leading-36 lg:leading-48"
+      >
         We make it feel like that again.
       </h6>
-      <div
-        class="flex justify-center items-center p-6 mt-12"
-      >
+      <div class="flex justify-center items-center p-6 mt-12">
         <small use:reveal
           >Copyright 2025 <span>&centerdot;</span> Skip the Noise Media</small
         >
