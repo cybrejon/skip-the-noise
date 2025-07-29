@@ -30,11 +30,11 @@
         delay: 250,
         duration: 400,
         easing: quadOut,
-        x: "20%",
+        x: "15%",
         y: 0,
         opacity: 0,
       }}
-      out:scale={{ duration: 400, easing: quadOut, start: 1.4, opacity: 0 }}
+      out:scale={{ duration: 400, easing: quadOut, start: 1.1, opacity: 0 }}
       >{switcherooText}</span
     >
   {/key}
