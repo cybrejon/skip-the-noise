@@ -406,7 +406,6 @@
   <section
     id="team"
     class="bg-deep-indigo text-primary-foreground"
-    style={`background-image: url(${image_grid_background}); background-size: cover; background-attachment: fixed;`}
   >
     <!-- Intro -->
     <div id="team-intro" class="py-30 sticky top-0">
@@ -450,7 +449,6 @@
     <!-- Details -->
     <div
       class="sticky top-0 px-3 bg-deep-indigo text-primary-foreground"
-      style={`background-image: url(${image_grid_background}); background-size: cover; background-attachment: fixed;`}
     >
       <div class="container mx-auto grid lg:grid-cols-2 gap-6 pb-30">
         <article class="card-alt border-yellow -skew-y-1" style="background-image: url('bg/bg_zoha.svg'); backgrounds-size: cover; background-position: bottom;">
@@ -514,7 +512,6 @@
   <section
     id="bookend"
     class="text-primary-foreground bg-deep-indigo pt-28 sm:h-dvh flex items-end sm:items-center justify-center"
-    style={`background-image: url(${image_grid_background}); background-size: cover; background-attachment: fixed;`}
   >
     <div class="container mx-auto">
       <h6
@@ -528,7 +525,6 @@
   <section
     id="bookend"
     class="text-primary-foreground bg-deep-indigo pb-28 sm:h-dvh flex items-start sm:items-center justify-center"
-    style={`background-image: url(${image_grid_background}); background-size: cover; background-attachment: fixed;`}
   >
     <div class="container mx-auto">
       <h6
