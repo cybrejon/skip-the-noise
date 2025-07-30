@@ -216,7 +216,7 @@
   <section
     id="what-we-do"
     style={`background-image: url(${image_grid_background}); background-size: cover; background-attachment: fixed;`}
-    class={`border-t-2 border-deep-indigo ${servicesSectionObserver.intersecting ? "bg-yellow" : "bg-white"}`}
+    class={`border-t-2 border-deep-indigo pb-15 ${servicesSectionObserver.intersecting ? "bg-yellow" : "bg-white"}`}
     bind:this={servicesSectionObserver.ref}
   >
     <!-- Intro -->
