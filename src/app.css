@@ -246,10 +246,10 @@
   }
   /* Card */
   .card {
-    @apply border-2 rounded-xl overflow-hidden bg-secondary-400 drop-shadow-brutal-card;
+    @apply border-2 rounded-3xl overflow-hidden bg-secondary-400 drop-shadow-brutal-card;
   }
   .card-alt {
-    @apply border-2 rounded-xl overflow-hidden bg-primary-700 drop-shadow-brutal-card-alt;
+    @apply border-2 rounded-3xl overflow-hidden bg-primary-700 drop-shadow-brutal-card-alt;
   }
   /* Input */
   .input {

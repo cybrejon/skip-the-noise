@@ -67,26 +67,6 @@
 
 {#snippet HeroSection()}
   <section id="hero" class="px-3">
-    <!-- Splash -->
-    <!-- <div
-      id="splash"
-      class="h-svh sticky top-0"
-      aria-hidden="true"
-      style={`background-image: url(${image_grid_background}); background-size: cover;`}
-    >
-      <div class="container mx-auto h-full items-center grid grid-cols-2">
-          <div
-            class="leading-none font-extrabold font-manrope text-[8rem]"
-          >
-            <span class="tracking-tighter
-            ">Skip the</span><br />
-            <Switcheroo samples={switcherooSamples} />
-          </div>
-          <div>
-            {@render HeroAnimation()}
-          </div>
-      </div>
-    </div> -->
     <!-- Actual content -->
     <div
       bind:this={heroSectionObserver.ref}
@@ -96,7 +76,7 @@
     >
       <!-- Pane 1 -->
       <div
-        class="border-2 border-deep-indigo rounded-xl bg-primary-500 drop-shadow-brutal-card bg-bottom bg-cover overflow-hidden"
+        class="border-2 border-deep-indigo rounded-3xl bg-primary-500 drop-shadow-brutal-card bg-bottom bg-cover overflow-hidden"
         style="background-image: url('/src/lib/images/bg_performance.svg');"
       >
         <div
@@ -106,14 +86,14 @@
           <div class="flex gap-2 md:gap-3 items-center justify-center">
             {#each Array.from({ length: 3 }) as item}
               <span
-                class="h-4 w-4 md:h-6 md:w-6 bg-primary-foreground rounded-full"
+                class="h-4 w-4 md:h-6 md:w-6 bg-primary-200 rounded-full"
               ></span>
             {/each}
           </div>
         </div>
-        <div class="flex px-6 py-12 flex-col justify-center items-center">
+        <div class="flex px-6 py-12 gap-12 flex-col justify-center items-center">
           <hgroup
-            class="flex flex-col justify-center items-center pb-12 text-primary-foreground"
+            class="flex flex-col justify-center items-center text-primary-foreground"
           >
             <h1
               class="text-xl sm:text-xxl md:text-xxxl text-start lg:text-center mb-[0.5em]"
@@ -136,15 +116,15 @@
           </hgroup>
           <div
             id="ctas"
-            class="w-full flex justify-center items-center gap-3 flex-wrap"
+            class="flex gap-3 flex-col lg:flex-row"
           >
             <a
               href="/#"
-              class="group text-white inline-block relative w-full sm:w-fit brutal-button bg-secondary-500 p-2 rounded-2xl cursor-pointer"
+              class="group text-white inline-block relative brutal-button bg-secondary-500 p-2 rounded-2xl cursor-pointer"
               aria-label="Discover you platform score"
             >
               <div
-                class="flex flex-row items-center justify-center gap-2 p-4 sm:px-20 sm:py-6 border-2 rounded-lg border-secondary-100 border-dashed"
+                class="flex flex-row items-center justify-center gap-2 p-4 border-2 rounded-lg border-secondary-100 border-dashed"
               >
                 <span aria-hidden="true" class="text-shadow-brutal"
                   >Discover your Platform Score</span
@@ -161,36 +141,29 @@
             </a>
             <a
               href="/free-trial"
-              class="group inline-block text-white relative w-full sm:w-fit brutal-button bg-primary-500 p-2 rounded-2xl cursor-pointer"
+              class="group text-white relative brutal-button bg-primary-400 px-6 py-4 rounded-2xl cursor-pointer flex items-center justify-center"
               aria-label="Discover you platform score"
             >
-              <div
-                class="flex flex-row items-center justify-center gap-2 p-4 sm:px-10 sm:py-6 rounded-lg"
-              >
-                <span aria-hidden="true" class="text-shadow-brutal"
+            <span aria-hidden="true" class="text-shadow-brutal"
                   >Claim your 2-week free trial</span
                 >
-              </div>
             </a>
             <a
               href="/discuss-painpoints"
-              class="group inline-block text-white relative w-full sm:w-fit brutal-button bg-primary-500 p-2 rounded-2xl cursor-pointer"
+              class="group text-white relative brutal-button bg-primary-400 px-6 py-4 rounded-2xl cursor-pointer text-center flex items-center justify-center"
               aria-label="Discover you platform score"
             >
-              <div
-                class="flex flex-row items-center justify-center gap-2 p-4 sm:px-10 sm:py-6 rounded-lg"
-              >
-                <span aria-hidden="true" class="text-shadow-brutal"
+            <span aria-hidden="true" class="text-shadow-brutal"
                   >Talk pain points</span
                 >
-              </div>
             </a>
+
           </div>
         </div>
       </div>
       <!-- Pane 2 -->
       <div
-        class="lg:min-w-[30rem] border-2 border-deep-indigo rounded-xl bg-yellow-100 drop-shadow-brutal-card bg-bottom bg-cover overflow-hidden flex flex-col"
+        class="lg:min-w-[30rem] border-2 border-deep-indigo rounded-3xl bg-yellow-200 drop-shadow-brutal-card bg-bottom bg-cover overflow-hidden flex flex-col"
       >
         <div
           class="p-2 md:p-4 flex border-b-2 bg-deep-indigo"
@@ -199,7 +172,7 @@
           <div class="flex gap-2 md:gap-3 items-center justify-center">
             {#each Array.from({ length: 3 }) as item}
               <span
-                class="h-4 w-4 md:h-6 md:w-6 bg-primary-foreground rounded-full"
+                class="h-4 w-4 md:h-6 md:w-6 bg-yellow-100 rounded-full"
               ></span>
             {/each}
           </div>
@@ -216,18 +189,18 @@
           </div>
         </div>
         <!-- Silly buttons -->
-        <div class="flex gap-6 items-center justify-center pb-6 lg:pb-12">
+        <div class="flex gap-4 items-center justify-center pb-6 lg:p-6 bg-yellow-200 border-t-2 border-deep-indigo">
           <div
-            class="h-20 w-20 flex items-center justify-center rounded-xl bg-secondary-500 border-2 drop-shadow-brutal text-white border-deep-indigo"
+            class="h-15 w-20 flex items-center justify-center rounded-3xl bg-yellow-300 border-2 drop-shadow-brutal border-deep-indigo"
           >
             <!-- <Icon icon="fe:fast-backward" style="font-size: 3rem;" /> -->
-            <RewindIcon fill="white" />
+            <RewindIcon fill="white" size={42} />
           </div>
           <div
-            class="h-20 w-20 flex items-center justify-center rounded-xl bg-secondary-500 border-2 drop-shadow-brutal text-white border-deep-indigo"
+            class="h-20 w-20 flex items-center justify-center rounded-full bg-yellow-300 border-2 drop-shadow-brutal text-deep-indigo "
           >
             <!-- <Icon icon="fe:play" style="font-size: 4rem;" /> -->
-            <PlayIcon fill="white" size={32} />
+            <PlayIcon fill="white" size={42} />
           </div>
           <div
             id="animated-button-click"
@@ -240,13 +213,13 @@
             ></div>
             <button
               type="button"
-              class="h-20 w-20 flex items-center justify-center rounded-xl border-2 bg-secondary-500
-              text-white border-deep-indigo {heroClickAnimation
-                ? 'drop-shadow-brutal-pressed translate-y-1'
-                : 'drop-shadow-brutal-hovered -translate-y-1'}"
+              class="h-15 w-20 flex items-center justify-center rounded-3xl border-2 
+               border-deep-indigo {heroClickAnimation
+                ? 'drop-shadow-brutal-pressed bg-yellow translate-y-1'
+                : 'drop-shadow-brutal-hovered bg-yellow-300 -translate-y-1'}"
             >
               <!-- <Icon icon="fe:fast-forward" style="font-size: 3rem;" /> -->
-              <FastForwardIcon fill="white" />
+              <FastForwardIcon size={42} fill="white" />
             </button>
           </div>
         </div>
@@ -396,7 +369,7 @@
           </hgroup>
           <div class="h-full lg:flex-1/2 px-3 lg:px-0">
             <div
-              class="w-full h-full border-2 rounded-xl bg-yellow drop-shadow-brutal-card border-deep-indigo"
+              class="w-full h-full border-2 rounded-3xl bg-yellow drop-shadow-brutal-card border-deep-indigo"
             ></div>
           </div>
         </div>
@@ -416,7 +389,7 @@
           </hgroup>
           <div class="h-full lg:flex-1/2 px-3 lg:px-0">
             <div
-              class="w-full h-full border-2 rounded-xl bg-yellow drop-shadow-brutal-card border-deep-indigo"
+              class="w-full h-full border-2 rounded-3xl bg-yellow drop-shadow-brutal-card border-deep-indigo"
             ></div>
           </div>
         </div>
@@ -436,7 +409,7 @@
           </hgroup>
           <div class="h-full lg:flex-1/2 px-3 lg:px-0">
             <div
-              class="w-full h-full border-2 rounded-xl bg-yellow drop-shadow-brutal-card border-deep-indigo"
+              class="w-full h-full border-2 rounded-3xl bg-yellow drop-shadow-brutal-card border-deep-indigo"
             ></div>
           </div>
         </div>

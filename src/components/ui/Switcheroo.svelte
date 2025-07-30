@@ -25,7 +25,7 @@
 <div class="h-30 sm:h-40 md:h-50 relative flex justify-center items-start">
   {#key switcherooText}
     <span
-      class="text-secondary-500 absolute tracking-tighter"
+      class="text-primary-500 absolute tracking-tighter"
       in:fly={{
         delay: 250,
         duration: 400,
