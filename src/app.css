@@ -232,7 +232,7 @@
 
 @layer components {
   .pill {
-    @apply border-primary-foreground border-1 rounded-full px-2 text-sm font-medium drop-shadow-[0_4px_var(--color-white)] bg-primary-500;
+    @apply border-primary-foreground border-1 rounded-full px-3 py-1 text-sm font-medium drop-shadow-[0_4px_var(--color-white)] bg-primary-700;
   }
   .brutal-button {
     @apply drop-shadow-brutal active:drop-shadow-brutal-pressed hover:drop-shadow-brutal-hovered border-2 border-deep-indigo font-bold text-primary-foreground hover:bg-neutral-500 hover:-translate-y-1 active:translate-y-1;
@@ -249,7 +249,7 @@
     @apply border-2 rounded-xl overflow-hidden bg-secondary-400 drop-shadow-brutal-card;
   }
   .card-alt {
-    @apply border-2 rounded-xl overflow-hidden bg-primary-500 drop-shadow-brutal-card-alt border-dashed;
+    @apply border-2 rounded-xl overflow-hidden bg-primary-700 drop-shadow-brutal-card-alt;
   }
   /* Input */
   .input {

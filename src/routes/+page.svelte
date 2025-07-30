@@ -453,25 +453,57 @@
       style={`background-image: url(${image_grid_background}); background-size: cover; background-attachment: fixed;`}
     >
       <div class="container mx-auto grid lg:grid-cols-2 gap-6 pt-20 pb-30">
-        <article class="card-alt border-yellow p-12 space-y-2">
-          <h3 class="mb-5">Zoha</h3>
-          <p class="font-medium">Ex-WPP Director 🞪 Performance nerd</p>
-          <div class="flex gap-2 items-center justify-start mb-5">
-            <p class="pill">Obsessed with ROAS</p>
-            <p>+</p>
-            <p class="pill">Reddit</p>
+        <article class="card-alt border-yellow -skew-y-1" style="background-image: url('bg/bg_zoha.svg'); backgrounds-size: cover; background-position: bottom;">
+          <div
+            class="p-2 md:p-4 flex bg-yellow"
+            use:reveal={{ y: -20 }}
+          >
+            <div class="flex gap-2 md:gap-3 items-center justify-center">
+              {#each Array.from({ length: 3 }) as item}
+                <span class="h-4 w-4 md:h-6 md:w-6 bg-primary-700 rounded-full"
+                ></span>
+              {/each}
+            </div>
           </div>
-          <p class="text-sm">Loves cats and Apex Legends</p>
+          <div class="p-12">
+            <h3 class="mb-5">Zoha</h3>
+            <p class="font-medium mb-3">Ex-WPP Director 🞪 Performance nerd</p>
+            <div class="flex gap-2 items-center justify-start mb-5">
+              <p class="pill">Obsessed with ROAS</p>
+              <p>+</p>
+              <p class="pill">Reddit</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <Icon icon='tabler:heart' />
+              <p class="text-sm">Loves cats and Apex Legends</p>
+            </div>
+          </div>
         </article>
-        <article class="card-alt border-yellow p-12 space-y-2">
-          <h3 class="mb-5">Sonia</h3>
-          <p class="font-medium">Ex-WPP 🞪 Rogers &rarr; Coca-Cola</p>
-          <div class="flex gap-2 items-center justify-start mb-5">
-            <p class="pill">gemini</p>
-            <p class="pill">natural talker</p>
-            <p class="pill">always real</p>
+        <article class="card-alt border-yellow skew-y-1" style="background-image: url('bg/bg_sonia.svg'); backgrounds-size: cover; background-position: bottom;">
+          <div
+            class="p-2 md:p-4 flex bg-yellow"
+            use:reveal={{ y: -20 }}
+          >
+            <div class="flex gap-2 md:gap-3 items-center justify-center">
+              {#each Array.from({ length: 3 }) as item}
+                <span class="h-4 w-4 md:h-6 md:w-6 bg-primary-700 rounded-full"
+                ></span>
+              {/each}
+            </div>
           </div>
-          <p class="text-sm">Brings good vibes and even better ideas</p>
+          <div class="p-12">
+            <h3 class="mb-5">Sonia</h3>
+            <p class="font-medium mb-3">Ex-WPP 🞪 Rogers &rarr; Coca-Cola</p>
+            <div class="flex gap-2 items-center justify-start mb-5">
+              <p class="pill">gemini</p>
+              <p class="pill">natural talker</p>
+              <p class="pill">always real</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <Icon icon='tabler:heart' />
+              <p class="text-sm">Brings good vibes and even better ideas</p>
+            </div>
+          </div>
         </article>
       </div>
     </div>
