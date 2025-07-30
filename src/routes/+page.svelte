@@ -452,7 +452,7 @@
       class="sticky top-0 px-3 bg-deep-indigo text-primary-foreground"
       style={`background-image: url(${image_grid_background}); background-size: cover; background-attachment: fixed;`}
     >
-      <div class="container mx-auto grid lg:grid-cols-2 gap-6 pt-20 pb-30">
+      <div class="container mx-auto grid lg:grid-cols-2 gap-6 pb-30">
         <article class="card-alt border-yellow -skew-y-1" style="background-image: url('bg/bg_zoha.svg'); backgrounds-size: cover; background-position: bottom;">
           <div
             class="p-2 md:p-4 flex bg-yellow"
