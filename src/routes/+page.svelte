@@ -2,7 +2,12 @@
   import PlatformsMarquee from "@components/ui/PlatformsMarquee.svelte";
   import SiteHeader from "@components/ui/SiteHeader.svelte";
   import Switcheroo from "@components/ui/Switcheroo.svelte";
-  import { ArrowRightIcon } from "lucide-svelte";
+  import {
+    ArrowRightIcon,
+    FastForwardIcon,
+    PlayIcon,
+    RewindIcon,
+  } from "lucide-svelte";
   import image_grid_background from "$lib/images/grid.svg";
   import image_consultation_background from "$lib/images/bg_consultation.svg";
   import image_marketing_background from "$lib/images/bg_marketing.svg";
@@ -11,7 +16,7 @@
   import OrnamentCursor from "$lib/images/cursor.svg.svelte";
   import Gradientify from "@components/ui/Gradientify.svelte";
   import { useIntersectionObserver } from "$lib/scripts/hooks.svelte";
-  import { onMount } from "svelte";
+  import { onDestroy, onMount } from "svelte";
   import { reveal } from "svelte-reveal";
   import ScrollToTopButton from "@components/ui/ScrollToTopButton.svelte";
 
@@ -22,6 +27,14 @@
     "empty promises",
     "wasted time",
   ]);
+  let heroClickAnimation: boolean = $state(false);
+  const heroClickAnimationToggle = setInterval(() => {
+    setTimeout(() => {
+      heroClickAnimation = !heroClickAnimation;
+    }, 200);
+    heroClickAnimation = !heroClickAnimation;
+  }, 5000);
+
   let serviceCardsObserver = useIntersectionObserver({ threshold: 0.5 });
   let teamHeadshotsObserver = useIntersectionObserver({ threshold: 0.5 });
   let heroSectionObserver = useIntersectionObserver({ threshold: 0.5 });
@@ -35,6 +48,9 @@
   onMount(() => {
     serviceCardsObserver.once = true;
     teamHeadshotsObserver.once = true;
+  });
+  onDestroy(() => {
+    clearInterval(heroClickAnimationToggle);
   });
 </script>
 
@@ -50,7 +66,7 @@
 </main>
 
 {#snippet HeroSection()}
-  <section id="hero">
+  <section id="hero" class="px-3">
     <!-- Splash -->
     <!-- <div
       id="splash"
@@ -76,103 +92,13 @@
       bind:this={heroSectionObserver.ref}
       id="hero-content"
       style={`background-image: url(${image_grid_background}); background-size: cover; background-attachment: fixed;`}
-      class={`py-30 min-h-[80vh] sticky top-0 border-t-2 border-deep-indigo grid grid-cols-8 gap-6 px-6`}
+      class="container mx-auto py-30 min-h-[80vh] flex flex-col-reverse lg:flex-row gap-6"
     >
-      <div class="col-span-5">
-        <div
-          class="container mx-auto border-2 border-deep-indigo rounded-xl bg-primary-500 drop-shadow-brutal-card bg-bottom bg-cover overflow-hidden"
-          style="background-image: url('/src/lib/images/bg_performance.svg');"
-        >
-          <div
-            class="p-2 md:p-4 flex border-b-2 bg-deep-indigo"
-            use:reveal={{ y: -20 }}
-          >
-            <div class="flex gap-2 md:gap-3 items-center justify-center">
-              {#each Array.from({ length: 3 }) as item}
-                <span
-                  class="h-4 w-4 md:h-6 md:w-6 bg-primary-foreground rounded-full"
-                ></span>
-              {/each}
-            </div>
-          </div>
-          <div
-            class="flex px-3 py-12 md:py-24 flex-col justify-center items-center"
-          >
-            <hgroup
-              class="flex flex-col justify-center items-center px-6 pb-16 text-primary-foreground"
-            >
-              <h1 class="text-center mb-[0.5em] tracking-tight">
-                A <span class="text-nowrap">
-                  <Gradientify
-                    >Perform<Icon
-                      icon="noto:trophy"
-                      style="display: inline-block; vertical-align: top;"
-                    />nce</Gradientify
-                  >
-                </span> Digital Media agency founded by former WPP Media leads
-              </h1>
-              <p class="h5 text-center text-pretty">
-                We're cutting through the noise to deliver what matters... <span
-                  class="font-semibold text-orange-500">💪 RESULTS!</span
-                >
-              </p>
-            </hgroup>
-            <div
-              id="ctas"
-              class="w-full flex justify-center items-center gap-3 flex-wrap"
-            >
-              <a
-                href="/#"
-                class="group text-white inline-block relative w-full sm:w-fit brutal-button bg-secondary-500 p-2 rounded-2xl cursor-pointer"
-                aria-label="Discover you platform score"
-              >
-                <div
-                  class="flex flex-row items-center justify-center gap-2 p-4 sm:px-20 sm:py-6 border-2 rounded-lg border-secondary-100 border-dashed"
-                >
-                  <span aria-hidden="true" class="text-shadow-brutal"
-                    >Discover your Platform Score</span
-                  >
-                  <ArrowRightIcon
-                    class="group-hover:translate-x-2"
-                    size={20}
-                    aria-hidden
-                  />
-                </div>
-                <OrnamentCursor
-                  class="absolute -bottom-6 -right-6 w-12 h-12 text-white"
-                />
-              </a>
-              <a
-                href="/free-trial"
-                class="group inline-block text-white relative w-full sm:w-fit brutal-button bg-primary-500 p-2 rounded-2xl cursor-pointer"
-                aria-label="Discover you platform score"
-              >
-                <div
-                  class="flex flex-row items-center justify-center gap-2 p-4 sm:px-10 sm:py-6 rounded-lg"
-                >
-                  <span aria-hidden="true" class="text-shadow-brutal"
-                    >Claim your 2-week free trial</span
-                  >
-                </div>
-              </a>
-              <a
-                href="/discuss-painpoints"
-                class="group inline-block text-white relative w-full sm:w-fit brutal-button bg-primary-500 p-2 rounded-2xl cursor-pointer"
-                aria-label="Discover you platform score"
-              >
-                <div
-                  class="flex flex-row items-center justify-center gap-2 p-4 sm:px-10 sm:py-6 rounded-lg"
-                >
-                  <span aria-hidden="true" class="text-shadow-brutal"
-                    >Talk pain points</span
-                  >
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-span-3 border-2 border-deep-indigo rounded-xl bg-yellow-100 drop-shadow-brutal-card bg-bottom bg-cover overflow-hidden flex flex-col">
+      <!-- Pane 1 -->
+      <div
+        class="border-2 border-deep-indigo rounded-xl bg-primary-500 drop-shadow-brutal-card bg-bottom bg-cover overflow-hidden"
+        style="background-image: url('/src/lib/images/bg_performance.svg');"
+      >
         <div
           class="p-2 md:p-4 flex border-b-2 bg-deep-indigo"
           use:reveal={{ y: -20 }}
@@ -185,25 +111,142 @@
             {/each}
           </div>
         </div>
-        <div class="p-4 md:p-6 flex items-center h-full">
-          <div
-            class="leading-none font-extrabold font-manrope text-jumbo"
+        <div class="flex px-6 py-12 flex-col justify-center items-center">
+          <hgroup
+            class="flex flex-col justify-center items-center pb-12 text-primary-foreground"
           >
-            <span class="tracking-tighter 
-            ">Skip the</span><br />
+            <h1
+              class="text-xl sm:text-xxl md:text-xxxl text-start lg:text-center mb-[0.5em]"
+            >
+              A<span class="pl-1"></span>
+              <span class="text-nowrap">
+                <Gradientify
+                  >Perform<Icon
+                    icon="noto:trophy"
+                    style="display: inline-block; vertical-align: top;"
+                  />nce</Gradientify
+                >
+              </span> Digital Media agency founded by former WPP Media leads
+            </h1>
+            <p class="h5 text-start lg:text-center text-pretty">
+              We're cutting through the noise to deliver what matters... <span
+                class="font-bold text-yellow-200 text-nowrap">💪 RESULTS!</span
+              >
+            </p>
+          </hgroup>
+          <div
+            id="ctas"
+            class="w-full flex justify-center items-center gap-3 flex-wrap"
+          >
+            <a
+              href="/#"
+              class="group text-white inline-block relative w-full sm:w-fit brutal-button bg-secondary-500 p-2 rounded-2xl cursor-pointer"
+              aria-label="Discover you platform score"
+            >
+              <div
+                class="flex flex-row items-center justify-center gap-2 p-4 sm:px-20 sm:py-6 border-2 rounded-lg border-secondary-100 border-dashed"
+              >
+                <span aria-hidden="true" class="text-shadow-brutal"
+                  >Discover your Platform Score</span
+                >
+                <ArrowRightIcon
+                  class="group-hover:translate-x-2"
+                  size={20}
+                  aria-hidden
+                />
+              </div>
+              <OrnamentCursor
+                class="absolute -bottom-6 -right-6 w-12 h-12 text-white"
+              />
+            </a>
+            <a
+              href="/free-trial"
+              class="group inline-block text-white relative w-full sm:w-fit brutal-button bg-primary-500 p-2 rounded-2xl cursor-pointer"
+              aria-label="Discover you platform score"
+            >
+              <div
+                class="flex flex-row items-center justify-center gap-2 p-4 sm:px-10 sm:py-6 rounded-lg"
+              >
+                <span aria-hidden="true" class="text-shadow-brutal"
+                  >Claim your 2-week free trial</span
+                >
+              </div>
+            </a>
+            <a
+              href="/discuss-painpoints"
+              class="group inline-block text-white relative w-full sm:w-fit brutal-button bg-primary-500 p-2 rounded-2xl cursor-pointer"
+              aria-label="Discover you platform score"
+            >
+              <div
+                class="flex flex-row items-center justify-center gap-2 p-4 sm:px-10 sm:py-6 rounded-lg"
+              >
+                <span aria-hidden="true" class="text-shadow-brutal"
+                  >Talk pain points</span
+                >
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Pane 2 -->
+      <div
+        class="lg:min-w-[30rem] border-2 border-deep-indigo rounded-xl bg-yellow-100 drop-shadow-brutal-card bg-bottom bg-cover overflow-hidden flex flex-col"
+      >
+        <div
+          class="p-2 md:p-4 flex border-b-2 bg-deep-indigo"
+          use:reveal={{ y: -20 }}
+        >
+          <div class="flex gap-2 md:gap-3 items-center justify-center">
+            {#each Array.from({ length: 3 }) as item}
+              <span
+                class="h-4 w-4 md:h-6 md:w-6 bg-primary-foreground rounded-full"
+              ></span>
+            {/each}
+          </div>
+        </div>
+        <div class="h-full flex justify-center items-center p-3 md:p-6">
+          <div
+            class="leading-none font-extrabold font-manrope text-xxxl text-center my-auto"
+          >
+            <span
+              class="tracking-tighter
+            ">Skip the</span
+            >
             <Switcheroo samples={switcherooSamples} />
           </div>
         </div>
-        <div class="flex items-center justify-center pb-12">
-          <div class="flex gap-6 items-center justify-center">
-            <div class="h-20 w-20 flex items-center justify-center rounded-xl bg-secondary-500 border-2 drop-shadow-brutal text-white border-deep-indigo">
-              <Icon icon='fe:fast-backward' style='font-size: 3rem;' />
-            </div>
-            <div class="h-20 w-20 flex items-center justify-center rounded-xl bg-secondary-500 border-2 drop-shadow-brutal text-white border-deep-indigo">
-              <Icon icon='fe:play' style='font-size: 4rem;' />
-            </div>
-            <button type="button" class="brutal-button h-20 w-20 flex items-center justify-center rounded-xl bg-secondary-500 text-white border-deep-indigo">
-              <Icon icon='fe:fast-forward' style='font-size: 3rem;' />
+        <!-- Silly buttons -->
+        <div class="flex gap-6 items-center justify-center pb-6 lg:pb-12">
+          <div
+            class="h-20 w-20 flex items-center justify-center rounded-xl bg-secondary-500 border-2 drop-shadow-brutal text-white border-deep-indigo"
+          >
+            <!-- <Icon icon="fe:fast-backward" style="font-size: 3rem;" /> -->
+            <RewindIcon fill="white" />
+          </div>
+          <div
+            class="h-20 w-20 flex items-center justify-center rounded-xl bg-secondary-500 border-2 drop-shadow-brutal text-white border-deep-indigo"
+          >
+            <!-- <Icon icon="fe:play" style="font-size: 4rem;" /> -->
+            <PlayIcon fill="white" size={32} />
+          </div>
+          <div
+            id="animated-button-click"
+            class="relative flex justify-center items-center"
+          >
+            <div
+              class="hero-tap-highlight bg-deep-indigo/50 rounded-full {heroClickAnimation
+                ? 'opacity-100'
+                : 'opacity-0'}"
+            ></div>
+            <button
+              type="button"
+              class="h-20 w-20 flex items-center justify-center rounded-xl border-2 bg-secondary-500
+              text-white border-deep-indigo {heroClickAnimation
+                ? 'drop-shadow-brutal-pressed translate-y-1'
+                : 'drop-shadow-brutal-hovered -translate-y-1'}"
+            >
+              <!-- <Icon icon="fe:fast-forward" style="font-size: 3rem;" /> -->
+              <FastForwardIcon fill="white" />
             </button>
           </div>
         </div>
@@ -451,11 +494,11 @@
       class="sticky top-0 px-3 bg-deep-indigo text-primary-foreground"
     >
       <div class="container mx-auto grid lg:grid-cols-2 gap-6 pb-30">
-        <article class="card-alt border-yellow -skew-y-1" style="background-image: url('bg/bg_zoha.svg'); backgrounds-size: cover; background-position: bottom;">
-          <div
-            class="p-2 md:p-4 flex bg-yellow"
-            use:reveal={{ y: -20 }}
-          >
+        <article
+          class="card-alt border-yellow -skew-y-1"
+          style="background-image: url('bg/bg_zoha.svg'); backgrounds-size: cover; background-position: bottom;"
+        >
+          <div class="p-2 md:p-4 flex bg-yellow" use:reveal={{ y: -20 }}>
             <div class="flex gap-2 md:gap-3 items-center justify-center">
               {#each Array.from({ length: 3 }) as item}
                 <span class="h-4 w-4 md:h-6 md:w-6 bg-primary-700 rounded-full"
@@ -472,16 +515,16 @@
               <p class="pill">Reddit</p>
             </div>
             <div class="flex items-center gap-2">
-              <Icon icon='tabler:heart' />
+              <Icon icon="tabler:heart" />
               <p class="text-sm">Loves cats and Apex Legends</p>
             </div>
           </div>
         </article>
-        <article class="card-alt border-yellow skew-y-1" style="background-image: url('bg/bg_sonia.svg'); backgrounds-size: cover; background-position: bottom;">
-          <div
-            class="p-2 md:p-4 flex bg-yellow"
-            use:reveal={{ y: -20 }}
-          >
+        <article
+          class="card-alt border-yellow skew-y-1"
+          style="background-image: url('bg/bg_sonia.svg'); backgrounds-size: cover; background-position: bottom;"
+        >
+          <div class="p-2 md:p-4 flex bg-yellow" use:reveal={{ y: -20 }}>
             <div class="flex gap-2 md:gap-3 items-center justify-center">
               {#each Array.from({ length: 3 }) as item}
                 <span class="h-4 w-4 md:h-6 md:w-6 bg-primary-700 rounded-full"
@@ -498,7 +541,7 @@
               <p class="pill">always real</p>
             </div>
             <div class="flex items-center gap-2">
-              <Icon icon='tabler:heart' />
+              <Icon icon="tabler:heart" />
               <p class="text-sm">Brings good vibes and even better ideas</p>
             </div>
           </div>
@@ -606,6 +649,37 @@
         rotate: -15deg;
         translate: 20vw 0;
         transition-delay: 300ms;
+      }
+    }
+  }
+
+  #animated-button-click {
+    & > button {
+      transition: cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.2s;
+    }
+    & > .hero-tap-highlight {
+      width: 4px;
+      height: 20px;
+      position: absolute;
+      top: -24px;
+      transform: translateY(-4px);
+
+      &::before,
+      &::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        border-radius: inherit;
+        background: inherit;
+        position: absolute;
+      }
+      &::before {
+        left: -20px;
+        transform: rotate(-30deg);
+      }
+      &::after {
+        right: -20px;
+        transform: rotate(30deg);
       }
     }
   }
