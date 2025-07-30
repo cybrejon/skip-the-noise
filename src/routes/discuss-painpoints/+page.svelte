@@ -1,6 +1,6 @@
 <script lang="ts">
   import SiteHeader from "@components/ui/SiteHeader.svelte";
-  import Icon from "@iconify/svelte";
+  import image_grid_background from "$lib/images/grid.svg";
 
   interface PainpointsForm {
     firstName: string | undefined;
@@ -25,12 +25,11 @@
 
 <SiteHeader />
 
-<main class="isolate w-full overflow-x-clip">
+<main class="isolate w-full overflow-x-clip" style={`background-image: url(${image_grid_background}); background-size: cover;`}>
   <!-- <div class="container mx-auto grid md:grid-cols-2">
   </div> -->
   {@render HeroSection()}
   {@render PainpointsFormSection()}
-  {@render BookendSection()}
 </main>
 
 {#snippet HeroSection()}
@@ -65,30 +64,30 @@
 {#snippet PainpointsFormSection()}
   <section id="painpoints-form" class="py-12 px-3 md:px-6">
     <div class="container mx-auto">
-      <h2 class="h4 text-center">
-        Share some details, we'll email you with next steps.
+      <h2 class="h4 text-center mb-20">
+        Share some details,<br />we'll email you with next steps.
       </h2>
 
       <!-- TODO: Add functionality to this form -->
       <form
-        class="card max-w-2xl p-4 md:p-12 mx-auto mt-6 grid gap-6 bg-white border-2 border-deep-indigo drop-shadow-brutal-card"
+        class="card max-w-2xl p-4 md:p-12 mx-auto mt-6 grid gap-6 bg-yellow-100 border-2 border-deep-indigo drop-shadow-brutal-card"
         onsubmit={(ev) => {
           ev.preventDefault();
         }}
       >
         <fieldset class="grid md:grid-cols-2 gap-3">
-          <label class="">
+          <label class="font-semibold tracking-tight">
             <p>First Name</p>
             <input
               type="text"
-              class="input"
+              class="input bg-yellow-200"
               name="first-name"
               placeholder="e.g. Walter"
               bind:value={painpointsFormData.firstName}
               required
             />
           </label>
-          <label class="">
+          <label class="font-semibold tracking-tight">
             <p>Last Name</p>
             <input
               type="text"
@@ -101,7 +100,7 @@
           </label>
         </fieldset>
 
-        <label class="">
+        <label class="font-semibold tracking-tight">
           <p>Job Title</p>
           <input
             type="text"
@@ -113,7 +112,7 @@
           />
         </label>
 
-        <label class="">
+        <label class="font-semibold tracking-tight">
           <p>Business Email</p>
           <input
             type="email"
@@ -125,7 +124,7 @@
           />
         </label>
 
-        <label class="">
+        <label class="font-semibold tracking-tight">
           <p>Website URL</p>
           <input
             type="url"
@@ -141,7 +140,7 @@
           class="grid gap-3"
           data-option={painpointsFormData.adBudgetOver20k}
         >
-          <p>Is your ad budget greater than $20K per month?</p>
+          <p class="font-semibold tracking-tight">Is your ad budget greater than $20K per month?</p>
           <div class="relative grid grid-cols-2 gap-3">
             <label
               class=" flex justify-center items-center py-3 rounded-sm border-2 border-deep-indigo cursor-pointer
@@ -176,11 +175,12 @@
           </div>
         </fieldset>
 
-        <label class="">
-          <p>Describe your pain point in 15 words or less</p>
+        <label class="grid gap-3">
+          <p class="font-semibold tracking-tight">Describe your pain point</p>
           <input
             type="text"
             class="input"
+            placeholder="in 15 words or less"
             bind:value={painpointsFormData.painpointDescription}
           />
         </label>
@@ -216,3 +216,11 @@
     </div>
   </section>
 {/snippet}
+
+<style>
+  @reference "../../app.css";
+
+  input, select {
+    @apply rounded-sm bg-white drop-shadow-brutal;
+  }
+</style>

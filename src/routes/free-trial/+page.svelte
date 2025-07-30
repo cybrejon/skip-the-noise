@@ -119,7 +119,7 @@
 {#snippet TrialFormSection()}
   <section id="trial-form" class="py-12 px-3 md:px-6">
     <div class="container mx-auto">
-      <h2 class="h4 text-center">
+      <h2 class="h4 text-center mb-20">
         Just fill out the form, <br />we'll email you with next steps.
       </h2>
 
@@ -287,6 +287,6 @@
   @reference "../../app.css";
 
   input, select {
-    @apply rounded-sm;
+    @apply rounded-sm bg-white drop-shadow-brutal;
   }
 </style>
