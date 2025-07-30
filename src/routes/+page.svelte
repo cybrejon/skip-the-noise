@@ -222,7 +222,7 @@
     <!-- Intro -->
     <div id="services-intro" class="py-30 sticky top-0">
       <div class="container mx-auto">
-        <h2 class="h4 text-center px-6">What we do</h2>
+        <h2 class="text-4xl md:text-7xl text-center px-6">What we do</h2>
       </div>
     </div>
     <!-- Services -->
@@ -411,7 +411,7 @@
     <!-- Intro -->
     <div id="team-intro" class="py-30 sticky top-0">
       <hgroup class="container mx-auto">
-        <h2 class="h4 text-center px-6 mb-[0.25em]">Meet Team Noise-Free</h2>
+        <h2 class="text-4xl md:text-7xl text-center px-6 mb-[0.25em]">Meet Team Noise-Free</h2>
         <p class="text-center">
           Two friends, united by a mission: skip the noise, deliver results, and
           have fun doing it.
