@@ -51,7 +51,6 @@
   </div> -->
   {@render HeroSection()}
   {@render TrialFormSection()}
-  {@render BookendSection()}
 </main>
 
 {#snippet HeroSection()}
