@@ -19,6 +19,7 @@
   import { onDestroy, onMount } from "svelte";
   import { reveal } from "svelte-reveal";
   import ScrollToTopButton from "@components/ui/ScrollToTopButton.svelte";
+  import Fazer from "@components/ui/fazer.svelte";
 
   let switcherooSamples: string[] = $state([
     "unnecessary calls",
@@ -163,8 +164,12 @@
       </div>
       <!-- Pane 2 -->
       <div
-        class="lg:min-w-[30rem] border-2 border-deep-indigo rounded-3xl bg-yellow-200 drop-shadow-brutal-card bg-bottom bg-cover overflow-hidden flex flex-col"
+        class="lg:min-w-[30rem] relative border-2 border-deep-indigo rounded-3xl bg-yellow-200 drop-shadow-brutal-card bg-bottom bg-cover overflow-hidden flex flex-col"
       >
+      <Fazer />
+      <div class="ornaments">
+        
+      </div>
         <div
           class="p-2 md:p-4 flex border-b-2 bg-deep-indigo"
           use:reveal={{ y: -20 }}
